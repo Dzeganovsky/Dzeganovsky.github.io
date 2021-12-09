@@ -1,0 +1,44 @@
+.bl-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.2rem;
+  margin: 0;
+  padding: 0.5rem 3.2rem;
+  border: none;
+  border-radius: 1.2rem;
+  background-color: var(--cyan-100);
+  text-decoration: none;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--white-100);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.24s ease;
+
+  &:hover {
+    background-color: var(--cyan-80);
+    text-decoration: none;
+  }
+
+  &:disabled {
+    background-color: var(--white-100);
+    color: var(--blue-50);
+  }
+
+  &--secondary {
+    background-color: var(--blue-10);
+    color: var(--cyan-100);
+
+    &:hover {
+      background-color: var(--cyan-10);
+      text-decoration: none;
+    }
+  
+    &:disabled {
+      background-color: var(--white-100);
+      color: var(--blue-50);
+    }
+  }
+}

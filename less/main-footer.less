@@ -1,0 +1,19 @@
+@import "_mixins.less";
+
+.main-footer {
+  .centered-container();
+  display: grid;
+  grid-template-columns: auto min-content;
+  grid-template-areas: "logo actions"
+                       "nav  nav";
+
+  &__logo {
+    grid-area: logo;
+  }
+  &__actions {
+    grid-area: actions;
+  }
+  &__nav {
+    grid-area: nav;
+  }
+}
