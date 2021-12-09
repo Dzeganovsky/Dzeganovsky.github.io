@@ -15,9 +15,9 @@
   background-color: var(--cyan-100);
   text-decoration: none;
   font-size: 1.4rem;
-  line-height: 1.2;
+  line-height: 1.25;
   font-weight: 600;
-  color: var(--white-100);
+  color: white;
   white-space: nowrap;
   cursor: pointer;
   transition: background-color 0.24s ease;
@@ -27,7 +27,7 @@
   text-decoration: none;
 }
 .bl-button:disabled {
-  background-color: var(--white-100);
+  background-color: white;
   color: var(--blue-50);
 }
 .bl-button--secondary {
@@ -39,7 +39,7 @@
   text-decoration: none;
 }
 .bl-button--secondary:disabled {
-  background-color: var(--white-100);
+  background-color: white;
   color: var(--blue-50);
 }
 
@@ -61,7 +61,6 @@
   --blue-30: #dae6ee;
   --blue-10: #eff4f7;
   --blue-08: #f7f9fa;
-  --white-100: #ffffff;
   --white-50: rgba(255, 255, 255, 0.5);
   --error: #cf1f34;
   --accept: #27bd75;
@@ -90,12 +89,13 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: var(--white-100);
+  background-color: white;
 }
 html {
   font-family: 'Montserrat', sans-serif;
   font-size: 62.5%;
   font-weight: 500;
+  line-height: 1.25;
 }
 body {
   min-width: var(--min-page-width);
@@ -122,14 +122,39 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--white-100);
+  color: white;
 }
 .footer-copyright__text {
   margin: 0;
   text-transform: uppercase;
   font-size: 1.2rem;
-  line-height: 1.2;
   font-weight: bold;
+}
+
+.footer-nav {
+  width: 21rem;
+}
+.footer-nav__title {
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--blue-50);
+}
+.footer-nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+}
+.footer-nav__item {
+  display: block;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+}
+.footer-nav__item:hover {
+  color: white;
 }
 
 .footer-social {
@@ -154,6 +179,7 @@ h6 {
   display: grid;
   grid-template-columns: auto min-content;
   grid-template-areas: "logo actions" "nav  nav";
+  padding-top: 4rem;
 }
 .main-footer__logo {
   grid-area: logo;
@@ -163,6 +189,11 @@ h6 {
 }
 .main-footer__nav {
   grid-area: nav;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2.2rem;
+  padding-bottom: 6.2rem;
+  column-gap: 1.6rem;
 }
 
 .main-header {
@@ -185,7 +216,7 @@ h6 {
   min-height: 100%;
 }
 .main-layout .main-layout__header {
-  background-color: var(--white-100);
+  background-color: white;
 }
 .main-layout .main-layout__content {
   flex-grow: 1;
@@ -213,7 +244,6 @@ h6 {
   display: block;
   font-size: 1.6rem;
   text-decoration: none;
-  line-height: 1.25;
   font-weight: 600;
   color: var(--cyan-100);
   white-space: nowrap;
@@ -237,7 +267,6 @@ h6 {
   --blue-30: #dae6ee;
   --blue-10: #eff4f7;
   --blue-08: #f7f9fa;
-  --white-100: #ffffff;
   --white-50: rgba(255, 255, 255, 0.5);
   --error: #cf1f34;
   --accept: #27bd75;
