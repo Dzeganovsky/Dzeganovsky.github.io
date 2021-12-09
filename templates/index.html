@@ -1,0 +1,57 @@
+{% extends "blocks/_layout.html" %}
+{% set tiles = [
+    {
+      tags: ["Tag content","Tag content","Tag content","Tag content"]
+    },
+    {
+      tags: ["Tag content","Tag content","Tag content","Tag content"]
+    },
+    {
+      tags: ["Tag content","Tag content","Tag content","Tag content"]
+    },
+    {
+      tags: ["Tag content","Tag content","Tag content","Tag content"]
+    },
+    {
+      tags: ["Tag content","Tag content","Tag content","Tag content"]
+    },
+    {
+      tags: ["Tag content","Tag content","Tag content","Tag content"]
+    },
+    {
+      tags: ["Tag content","Tag content","Tag content","Tag content"]
+    },
+    {
+      tags: ["Tag content","Tag content","Tag content","Tag content"]
+    },
+    {
+      tags: ["Tag content","Tag content","Tag content","Tag content"]
+    }
+] %}
+{% block content %}
+  <div class="tiles-grid">
+    {% for item in tiles %}
+      <article class="tile-card">
+        <picture class="tile-card__image">
+          <source srcset="/img/dummy/tile-card.avif">
+          <source srcset="/img/dummy/tile-card.webp">
+          <img src="/img/dummy/tile-card.png" alt="{{ item.title }}"/>
+        </picture>
+        <div class="tile-card__content">
+          <time class="tile-card__date">21.21.2021</time>
+          <h3 class="tile-card__title">Event Title</h3>
+          <p class="tile-card__description">
+            Text Content
+          </p>
+          <section class="tags-list">
+            {% for tag in item.tags %}
+              <div class="tags-list__item">
+                {{ tag }}
+              </div>
+            {% endfor %}
+          </section>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+{% endblock %}
