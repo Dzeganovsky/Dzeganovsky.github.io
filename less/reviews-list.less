@@ -15,6 +15,7 @@
     position: relative;
     display: block;
     padding-top: 32%;
+    margin-bottom: 1.2rem;
 
     > img {
       position: absolute;
@@ -29,7 +30,42 @@
     }
   }
 
+  &__header {
+    position: relative;
+    padding-left: 5.8rem;
+    min-height: 4.2rem;
+    margin-bottom: 1.9rem;
+
+    &::before {
+      content: url("/img/review-icon.svg");
+      position: absolute;
+      left: 0;
+      top: 50%;
+      display: flex;
+      justify-content: center;
+      width: 4.2rem;
+      height: 4.2rem;
+      padding-top: 0.7rem;
+      background-color: var(--blue-08);
+      border-radius: 1.2rem;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__name {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  &__organization {
+    font-size: 1.4rem;
+  }
+
   &__text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.6rem;
+    font-size: 1.4rem;
     word-break: break-word;
   }
 }

@@ -1,16 +1,26 @@
-<section class="top-section">
+<section class="top-section  {% if topSectionData.isInverse %} top-section--inverse{% endif %}"
+  {% if topSectionData.bgImage %} style="background-image: url('{{ topSectionData.bgImage }}')" {% endif %}
+>
   <div class="top-section__wrapper">
-    <h2 class="top-section__title">
-      Единый сервис для<br/>организаторов мероприятий
-    </h2>
-    <p class="top-section__description">....теперь станет проще.</p>
-    <div class="buttons-group">
-      <a class="bl-button" href="#">
-        Продавать билеты
-      </a>
-      <a class="bl-button  bl-button--secondary" href="#">
-        Связаться с нами
-      </a>
-    </div>
+    {% if topSectionData.title %}
+      <h2 class="top-section__title">
+        {{ topSectionData.title | safe }}
+      </h2>
+    {% endif %}
+    {% if topSectionData.text %}
+      <p class="top-section__description">
+        {{ topSectionData.text | safe }}
+      </p>
+    {% endif %}
+    {% if topSectionData.buttons %}
+      <div class="buttons-group">
+        <a class="bl-button" href="#">
+          Продавать билеты
+        </a>
+        <a class="bl-button  bl-button--secondary" href="#">
+          Связаться с нами
+        </a>
+      </div>
+    {% endif %}
   </div>
 </section>

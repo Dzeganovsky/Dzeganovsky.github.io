@@ -1,35 +1,17 @@
 {% extends "blocks/_layout.html" %}
-{% set tiles = [
-    {
-      tags: ["Tag content","Tag content","Tag content","Tag content"]
-    },
-    {
-      tags: ["Tag content","Tag content","Tag content","Tag content"]
-    },
-    {
-      tags: ["Tag content","Tag content","Tag content","Tag content"]
-    },
-    {
-      tags: ["Tag content","Tag content","Tag content","Tag content"]
-    },
-    {
-      tags: ["Tag content","Tag content","Tag content","Tag content"]
-    },
-    {
-      tags: ["Tag content","Tag content","Tag content","Tag content"]
-    },
-    {
-      tags: ["Tag content","Tag content","Tag content","Tag content"]
-    },
-    {
-      tags: ["Tag content","Tag content","Tag content","Tag content"]
-    },
-    {
-      tags: ["Tag content","Tag content","Tag content","Tag content"]
-    }
-] %}
+
 {% block content %}
+  <!-- topSection -->
+  {% set topSectionData = {
+    title: "Title",
+    text: "Text Content",
+    bgImage: "/img/dummy/top-section-bg.webp",
+    buttons: true,
+    isInverse: true
+  } %}
   {% include "./blocks/_top-section.html" %}
+  <!-- ****** -->
+
   <section class="tiles-grid">
     <header class="section-header">
       <h2 class="section-header__title">
@@ -40,28 +22,8 @@
       </a>
     </header>
     <div class="tiles-grid__content">
-      {% for item in tiles %}
-        <article class="tile-card ">
-          <picture class="tile-card__image">
-            <source srcset="/img/dummy/tile-card.avif"/>
-            <source srcset="/img/dummy/tile-card.webp"/>
-            <img src="/img/dummy/tile-card.png" alt="Event Title"/>
-          </picture>
-          <div class="tile-card__content">
-            <time class="tile-card__date">21.21.2021</time>
-            <h3 class="tile-card__title">Event Title</h3>
-            <p class="tile-card__description">
-              Text Content
-            </p>
-            <section class="tags-list">
-              {% for tag in item.tags %}
-                <div class="tags-list__item">
-                  {{ tag }}
-                </div>
-              {% endfor %}
-            </section>
-          </div>
-        </article>
+      {% for item in range(0, 13) %}
+        {% include "./blocks/_tile-card.html" %}
       {% endfor %}
     </div>
   </section>
@@ -81,45 +43,48 @@
       </div>
     </div>
   </section>
-  <header class="section-header">
-    <h2 class="section-header__title">
-      Мебельные мероприятия
-    </h2>
-    <a class="section-header__link" href="#">
-      Показать Все
-    </a>
-  </header>
-  <div class="swiper" data-section="tiles">
-    <div class="swiper-wrapper">
-      {% for item in tiles %}
-        <div class="swiper-slide">
-          <article class="tile-card ">
-            <picture class="tile-card__image">
-              <source srcset="/img/dummy/tile-card.avif"/>
-              <source srcset="/img/dummy/tile-card.webp"/>
-              <img src="/img/dummy/tile-card.png" alt="Event Title"/>
-            </picture>
-            <div class="tile-card__content">
-              <time class="tile-card__date">21.21.2021</time>
-              <h3 class="tile-card__title">Event Title</h3>
-              <p class="tile-card__description">
-                Text Content
-              </p>
-              <section class="tags-list">
-                {% for tag in item.tags %}
-                  <div class="tags-list__item">
-                    {{ tag }}
-                  </div>
-                {% endfor %}
-              </section>
-            </div>
-          </article>
-        </div>
-      {% endfor %}
+
+  <section class="event-slider">
+    <header class="section-header">
+      <h2 class="section-header__title">
+        Мебельные мероприятия
+      </h2>
+      <a class="section-header__link" href="#">
+        Показать Все
+      </a>
+    </header>
+    <div class="swiper" data-section="tiles">
+      <div class="swiper-wrapper">
+        {% for item in range(0, 13) %}
+          <div class="swiper-slide">
+            {% include "./blocks/_tile-card.html" %}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-  </div>
+  </section>
+
+  <section class="event-slider">
+    <header class="section-header">
+      <h2 class="section-header__title">
+        Мебельные мероприятия
+      </h2>
+      <a class="section-header__link" href="#">
+        Показать Все
+      </a>
+    </header>
+    <div class="swiper" data-section="tiles">
+      <div class="swiper-wrapper">
+        {% for item in range(0, 13) %}
+          <div class="swiper-slide">
+            {% include "./blocks/_tile-card.html" %}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
 {% endblock %}
 {% block jsPerPage %}
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>

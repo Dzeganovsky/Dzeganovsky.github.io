@@ -5,8 +5,24 @@
   align-items: center;
   height: 58rem;
   background-color: var(--cyan-60);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  &--inverse {
+    color: white
+  }
 
   &__wrapper {
     .centered-container();
+  }
+
+  &__title + &__description {
+    margin-top: 1.6rem;
+  }
+
+  &__title + .buttons-group,
+  &__description + .buttons-group {
+    margin-top: 2.4rem;
   }
 }

@@ -194,6 +194,15 @@ h4 {
   font-size: 1.6rem;
 }
 
+.event-slider {
+  width: 100%;
+  max-width: var(--max-page-width);
+  margin: 0 auto;
+  padding-left: var(--page-aside-indent);
+  padding-right: var(--page-aside-indent);
+  margin-bottom: 4rem;
+}
+
 .footer-copyright {
   background-color: var(--blue-80);
   padding: 1.6rem 0;
@@ -389,6 +398,7 @@ h4 {
   position: relative;
   display: block;
   padding-top: 32%;
+  margin-bottom: 1.2rem;
 }
 .reviews-list__logo > img {
   position: absolute;
@@ -401,7 +411,38 @@ h4 {
   max-height: 100%;
   object-fit: contain;
 }
+.reviews-list__header {
+  position: relative;
+  padding-left: 5.8rem;
+  min-height: 4.2rem;
+  margin-bottom: 1.9rem;
+}
+.reviews-list__header::before {
+  content: url("/img/review-icon.svg");
+  position: absolute;
+  left: 0;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  width: 4.2rem;
+  height: 4.2rem;
+  padding-top: 0.7rem;
+  background-color: var(--blue-08);
+  border-radius: 1.2rem;
+  transform: translateY(-50%);
+}
+.reviews-list__name {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.reviews-list__organization {
+  font-size: 1.4rem;
+}
 .reviews-list__text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+  font-size: 1.4rem;
   word-break: break-word;
 }
 
@@ -669,6 +710,12 @@ button.swiper-pagination-bullet {
   align-items: center;
   height: 58rem;
   background-color: var(--cyan-60);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.top-section--inverse {
+  color: white;
 }
 .top-section__wrapper {
   width: 100%;
@@ -676,6 +723,13 @@ button.swiper-pagination-bullet {
   margin: 0 auto;
   padding-left: var(--page-aside-indent);
   padding-right: var(--page-aside-indent);
+}
+.top-section__title + .top-section__description {
+  margin-top: 1.6rem;
+}
+.top-section__title + .buttons-group,
+.top-section__description + .buttons-group {
+  margin-top: 2.4rem;
 }
 
 :root {
@@ -722,5 +776,7 @@ button.swiper-pagination-bullet {
   top: 0;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+  background-color: white;
   font-size: 1rem;
 }

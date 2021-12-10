@@ -26,7 +26,15 @@
     }
 ] %}
 {% block content %}
+  <!-- topSection -->
+  {% set topSectionData = {
+    title: "Единый сервис для<br/>организаторов мероприятий",
+    text: "",
+    bgImage: "",
+    buttons: false
+  } %}
   {% include "./blocks/_top-section.html" %}
+  <!-- ****** -->
   
   <section class="promo-list">
     {% for promo in promos %}
@@ -60,6 +68,8 @@
   {% include "./blocks/_clients-slider.html" %}
 
   {% include "./blocks/_clients-reviews.html" %}
+  
+  {% include "./blocks/_join-us.html" %}
   
 {% endblock %}
 
