@@ -30,38 +30,40 @@
 ] %}
 {% block content %}
   {% include "./blocks/_top-section.html" %}
-  <header class="section-header">
-    <h2 class="section-header__title">
-      В Киеве сегодня
-    </h2>
-    <a class="section-header__link" href="#">
-      Показать Все
-    </a>
-  </header>
   <section class="tiles-grid">
-    {% for item in tiles %}
-      <article class="tile-card ">
-        <picture class="tile-card__image">
-          <source srcset="/img/dummy/tile-card.avif"/>
-          <source srcset="/img/dummy/tile-card.webp"/>
-          <img src="/img/dummy/tile-card.png" alt="Event Title"/>
-        </picture>
-        <div class="tile-card__content">
-          <time class="tile-card__date">21.21.2021</time>
-          <h3 class="tile-card__title">Event Title</h3>
-          <p class="tile-card__description">
-            Text Content
-          </p>
-          <section class="tags-list">
-            {% for tag in item.tags %}
-              <div class="tags-list__item">
-                {{ tag }}
-              </div>
-            {% endfor %}
-          </section>
-        </div>
-      </article>
-    {% endfor %}
+    <header class="section-header">
+      <h2 class="section-header__title">
+        В Киеве сегодня
+      </h2>
+      <a class="section-header__link" href="#">
+        Показать Все
+      </a>
+    </header>
+    <div class="tiles-grid__content">
+      {% for item in tiles %}
+        <article class="tile-card ">
+          <picture class="tile-card__image">
+            <source srcset="/img/dummy/tile-card.avif"/>
+            <source srcset="/img/dummy/tile-card.webp"/>
+            <img src="/img/dummy/tile-card.png" alt="Event Title"/>
+          </picture>
+          <div class="tile-card__content">
+            <time class="tile-card__date">21.21.2021</time>
+            <h3 class="tile-card__title">Event Title</h3>
+            <p class="tile-card__description">
+              Text Content
+            </p>
+            <section class="tags-list">
+              {% for tag in item.tags %}
+                <div class="tags-list__item">
+                  {{ tag }}
+                </div>
+              {% endfor %}
+            </section>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
   </section>
   <section class="are-you-organizer">
     <div class="are-you-organizer__wrapper">
@@ -87,7 +89,7 @@
       Показать Все
     </a>
   </header>
-  <div class="swiper">
+  <div class="swiper" data-section="tiles">
     <div class="swiper-wrapper">
       {% for item in tiles %}
         <div class="swiper-slide">
@@ -120,10 +122,9 @@
   </div>
 {% endblock %}
 {% block jsPerPage %}
-  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script>
-    const swiper = new Swiper('.swiper', {
+    const swiper = new Swiper('[data-section="tiles"]', {
       spaceBetween: 8,
       slidesPerView: 4,
       slidesPerGroup: 4,

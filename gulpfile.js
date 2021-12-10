@@ -15,13 +15,13 @@ function compileNjs() {
 }
 
 function iWebp() {
-  return gulp.src('./img/dummy/*.png')
+  return gulp.src('./img/dummy/**/*.png')
           .pipe(webp())
           .pipe(gulp.dest('./img/dummy'));
 }
 
 function iAvif() {
-  return gulp.src('./img/dummy/*.png')
+  return gulp.src('./img/dummy/**/*.png')
           .pipe(avif())
           .pipe(gulp.dest('./img/dummy'));
 }
@@ -53,4 +53,5 @@ function dev(done) {
   done();
 };
 
+exports.img = parallel(iWebp, iAvif);
 exports.serve = series(parallel(compileNjs, compileLess, iWebp, iAvif), dev, watcher);

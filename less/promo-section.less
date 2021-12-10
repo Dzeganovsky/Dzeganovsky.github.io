@@ -1,0 +1,44 @@
+@import "_mixins.less";
+
+.promo-section {
+  &__wrapper {
+    .centered-container();
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 4rem;
+    padding-top: 5.8rem;
+    padding-bottom: 5.8rem;
+  }
+
+  &__content {
+    flex-shrink: 0;
+    max-width: 42%;
+  }
+
+  &__to-whom {
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  &__title {
+    margin-bottom: 1.6rem;
+  }
+
+  &__text {
+    min-width: 9rem;
+    margin-bottom: 2.4rem;
+  }
+
+  &__image {
+    flex-shrink: 0;
+    max-width: 47%;
+
+    > img {
+      display: block;
+      width: 100%;
+    }
+  }
+}

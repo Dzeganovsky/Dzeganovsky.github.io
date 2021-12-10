@@ -1,0 +1,87 @@
+{% set clients = [
+    {
+      name: "Имя партнера",
+      img: "client-1"
+    },
+    {
+      name: "Имя партнера",
+      img: "client-2"
+    },
+    {
+      name: "Имя партнера",
+      img: "client-3"
+    },
+    {
+      name: "Имя партнера",
+      img: "client-4"
+    },
+    {
+      name: "Имя партнера",
+      img: "client-5"
+    },
+    {
+      name: "Имя партнера",
+      img: "client-6"
+    },
+    {
+      name: "Имя партнера",
+      img: "client-7"
+    },
+    {
+      name: "Имя партнера",
+      img: "client-8"
+    },
+    {
+      name: "Имя партнера",
+      img: "client-9"
+    },
+    {
+      name: "Имя партнера",
+      img: "client-10"
+    },
+    {
+      name: "Имя партнера",
+      img: "client-11"
+    },
+    {
+      name: "Имя партнера",
+      img: "client-12"
+    },
+    {
+      name: "Имя партнера",
+      img: "client-13"
+    },
+    {
+      name: "Имя партнера",
+      img: "client-14"
+    },
+    {
+      name: "Имя партнера",
+      img: "client-15"
+    }
+] %}
+
+<section class="clients-slider">
+  <header class="section-header">
+    <h2 class="section-header__title">
+      128,000 организаторов уже с нами!
+    </h2>
+  </header>
+  <div class="swiper" data-section="our-clients">
+    <div class="swiper-wrapper">
+      {% for item in clients %}
+        <div class="swiper-slide">
+          <figure class="clients-slider__item">
+            <picture class="clients-slider__image">
+              <source srcset="/img/dummy/clients/{{item.img}}.avif"/>
+              <source srcset="/img/dummy/clients/{{item.img}}.webp"/>
+              <img src="/img/dummy/clients/{{item.img}}.png" alt="{{item.name}}"/>
+            </picture>
+          </figure>
+        </div>
+      {% endfor %}
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
