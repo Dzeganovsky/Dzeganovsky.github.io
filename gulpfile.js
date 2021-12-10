@@ -9,19 +9,19 @@ const avif = require('gulp-avif');
 const webp = require('gulp-webp');
 
 function compileNjs() {
-  return gulp.src('templates/*.html')
+  return gulp.src('./templates/*.html')
           .pipe(nunjucks.compile())
           .pipe(gulp.dest('./'));
 }
 
 function iWebp() {
-  return gulp.src('img/dummy/*.png')
+  return gulp.src('./img/dummy/*.png')
           .pipe(webp())
           .pipe(gulp.dest('./img/dummy'));
 }
 
 function iAvif() {
-  return gulp.src('img/dummy/*.png')
+  return gulp.src('./img/dummy/*.png')
           .pipe(avif())
           .pipe(gulp.dest('./img/dummy'));
 }
@@ -35,7 +35,7 @@ function compileLess() {
 
 function watcher(done) {
   watch(["./less/**/*.less"], parallel(compileLess));
-  watch(["./templates/*.html"], parallel(compileNjs));
+  watch(["./templates/**/*.html"], parallel(compileNjs));
   watch(["./img/dummy/*.png"], parallel(iWebp, iAvif));
 
   done();

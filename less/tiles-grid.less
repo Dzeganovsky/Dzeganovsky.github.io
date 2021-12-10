@@ -7,4 +7,29 @@
   justify-content: space-between;
   gap: 1.6rem;
   padding-bottom: 2.4rem;
+
+  .tile-card:first-child {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    height: auto;
+
+    .tile-card__image {
+      padding-top: 67%;
+    }
+    .tile-card__content {
+      padding: 1.8rem 1rem 2rem;
+    }
+    .tile-card__date {
+      margin-bottom: 0.5rem;
+    }
+    .tile-card__title {
+      font-size: 2.4rem;
+    }
+    .tile-card__description {
+      height: 4.5rem;
+      font-size: 1.8rem;
+    }
+  }
 }
