@@ -26,6 +26,8 @@
     }
 ] %}
 {% block content %}
+  {% include "./blocks/_top-section.html" %}
+  
   <section class="promo-list">
     {% for promo in promos %}
       <article class="promo-section">
