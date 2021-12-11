@@ -1,0 +1,27 @@
+{% extends "blocks/_layout.html" %}
+
+{% block content %}
+  {% set topSectionData = {
+    title: "Biletum Finance ",
+    text: "— ваш грамотный финансовый помощник.",
+    buttons: true
+  } %}
+  {% include "./blocks/_top-section.html" %}
+
+  {% include "./blocks/_our-advantages.html" %}
+  
+  {% include "./blocks/_one-tool.html" %}
+
+  {% set clientSlider = {
+    title: "128,000 организаторов уже с нами!"
+  } %}
+  {% include "./blocks/_clients-slider.html" %}
+
+  {% include "./blocks/_clients-reviews.html" %}
+
+  {% include "./blocks/_join-us.html" %}
+{% endblock %}
+
+{% block jsPerPage %}
+  {% include "./blocks/_clients-swiper-settings.html" %}
+{% endblock %}

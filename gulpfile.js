@@ -47,4 +47,5 @@ function dev(done) {
   done();
 };
 
+exports.img = parallel(iWebp);
 exports.serve = series(parallel(compileNjs, compileLess, iWebp), dev, watcher);

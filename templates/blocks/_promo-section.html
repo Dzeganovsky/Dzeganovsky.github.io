@@ -1,0 +1,26 @@
+
+<article class="promo-section">
+  <div class="promo-section__wrapper">
+    <div class="promo-section__content">
+      <div class="promo-section__to-whom">
+        {{ promoData.toWhom }}
+      </div>
+      <h2 class="promo-section__title">
+        {{ promoData.title }}
+      </h2>
+      <p class="promo-section__text">
+        {{ promoData.text }}
+      </p>
+      {% if promoData.buttons %}
+        <div class="buttons-group">
+          <a class="bl-button" href="#">Создать сервис</a>
+          <a class="bl-button  bl-button--secondary" href="#">Подробнее</a>
+        </div>
+      {% endif %}
+    </div>
+    <picture class="promo-section__image">
+      <source srcset="/img/dummy/promo-section/{{ promo.image }}.webp, /img/dummy/promo-section/{{ promo.image }}-x2.webp 2x"/>
+      <img srcset="/img/dummy/promo-section/{{ promo.image }}.png, /img/dummy/promo-section/{{ promo.image }}-x2.png 2x" src="/img/dummy/promo-section/{{ promo.image }}-x2.png" alt="Билетный сервис"/>
+    </picture>
+  </div>
+</article>

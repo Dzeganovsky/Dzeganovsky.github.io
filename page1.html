@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, min-scale=1">
     <title>Biletum</title>
     <meta name="description" content="">
     <meta property="og:description" content="">
@@ -28,6 +28,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
 
     <link href="/dist/style.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   </head>
   <body>
     <div class="main-layout">
@@ -77,7 +79,6 @@
       </div>
       <main class="main-layout__content">
         
-  <!-- topSection -->
   
   <section class="top-section  "
   
@@ -92,116 +93,141 @@
     
   </div>
 </section>
-  <!-- ****** -->
-  
+
   <section class="promo-list">
     
-      <article class="promo-section">
-        <div class="promo-section__wrapper">
-          <div class="promo-section__content">
-            <div class="promo-section__to-whom">
-              Организатору
-            </div>
-            <h2 class="promo-section__title">
-              Билетный сервис
-            </h2>
-            <p class="promo-section__text">
-              Обеспечьте успешную продажу билетов и онлайн-регистрацию на ваше мероприятие
-            </p>
-            <div class="buttons-group">
-              <a class="bl-button" href="#">Создать сервис</a>
-              <a class="bl-button  bl-button--secondary" href="#">Подробнее</a>
-            </div>
-          </div>
-          <picture class="promo-section__image">
-            <source srcset="/img/dummy/promo-section/content-1.webp, /img/dummy/promo-section/content-1-x2.webp 2x"/>
-            <img srcset="/img/dummy/promo-section/content-1.png, /img/dummy/promo-section/content-1-x2.png 2x" src="/img/dummy/promo-section/content-1-x2.png" alt="Билетный сервис"/>
-          </picture>
-        </div>
-      </article>
     
-      <article class="promo-section">
-        <div class="promo-section__wrapper">
-          <div class="promo-section__content">
-            <div class="promo-section__to-whom">
-              Организатору
-            </div>
-            <h2 class="promo-section__title">
-              Сервис дистрибуции 
-            </h2>
-            <p class="promo-section__text">
-              Привлекайте покупателей и обеспечьте рост продажи билетов, используя партнерскую сеть Biletum
-            </p>
-            <div class="buttons-group">
-              <a class="bl-button" href="#">Создать сервис</a>
-              <a class="bl-button  bl-button--secondary" href="#">Подробнее</a>
-            </div>
-          </div>
-          <picture class="promo-section__image">
-            <source srcset="/img/dummy/promo-section/content-3.webp, /img/dummy/promo-section/content-3-x2.webp 2x"/>
-            <img srcset="/img/dummy/promo-section/content-3.png, /img/dummy/promo-section/content-3-x2.png 2x" src="/img/dummy/promo-section/content-3-x2.png" alt="Билетный сервис"/>
-          </picture>
+      
+      
+<article class="promo-section">
+  <div class="promo-section__wrapper">
+    <div class="promo-section__content">
+      <div class="promo-section__to-whom">
+        Организатору
+      </div>
+      <h2 class="promo-section__title">
+        Билетный сервис
+      </h2>
+      <p class="promo-section__text">
+        Обеспечьте успешную продажу билетов и онлайн-регистрацию на ваше мероприятие
+      </p>
+      
+        <div class="buttons-group">
+          <a class="bl-button" href="#">Создать сервис</a>
+          <a class="bl-button  bl-button--secondary" href="#">Подробнее</a>
         </div>
-      </article>
+      
+    </div>
+    <picture class="promo-section__image">
+      <source srcset="/img/dummy/promo-section/content-1.webp, /img/dummy/promo-section/content-1-x2.webp 2x"/>
+      <img srcset="/img/dummy/promo-section/content-1.png, /img/dummy/promo-section/content-1-x2.png 2x" src="/img/dummy/promo-section/content-1-x2.png" alt="Билетный сервис"/>
+    </picture>
+  </div>
+</article>
     
-      <article class="promo-section">
-        <div class="promo-section__wrapper">
-          <div class="promo-section__content">
-            <div class="promo-section__to-whom">
-              Организатору
-            </div>
-            <h2 class="promo-section__title">
-              Платформа мероприятия
-            </h2>
-            <p class="promo-section__text">
-              Обеспечьте вашу аудиторию инструментами для успешного участия в мероприятии
-            </p>
-            <div class="buttons-group">
-              <a class="bl-button" href="#">Создать сервис</a>
-              <a class="bl-button  bl-button--secondary" href="#">Подробнее</a>
-            </div>
-          </div>
-          <picture class="promo-section__image">
-            <source srcset="/img/dummy/promo-section/content-2.webp, /img/dummy/promo-section/content-2-x2.webp 2x"/>
-            <img srcset="/img/dummy/promo-section/content-2.png, /img/dummy/promo-section/content-2-x2.png 2x" src="/img/dummy/promo-section/content-2-x2.png" alt="Билетный сервис"/>
-          </picture>
+      
+      
+<article class="promo-section">
+  <div class="promo-section__wrapper">
+    <div class="promo-section__content">
+      <div class="promo-section__to-whom">
+        Организатору
+      </div>
+      <h2 class="promo-section__title">
+        Сервис дистрибуции 
+      </h2>
+      <p class="promo-section__text">
+        Привлекайте покупателей и обеспечьте рост продажи билетов, используя партнерскую сеть Biletum
+      </p>
+      
+        <div class="buttons-group">
+          <a class="bl-button" href="#">Создать сервис</a>
+          <a class="bl-button  bl-button--secondary" href="#">Подробнее</a>
         </div>
-      </article>
+      
+    </div>
+    <picture class="promo-section__image">
+      <source srcset="/img/dummy/promo-section/content-3.webp, /img/dummy/promo-section/content-3-x2.webp 2x"/>
+      <img srcset="/img/dummy/promo-section/content-3.png, /img/dummy/promo-section/content-3-x2.png 2x" src="/img/dummy/promo-section/content-3-x2.png" alt="Билетный сервис"/>
+    </picture>
+  </div>
+</article>
     
-      <article class="promo-section">
-        <div class="promo-section__wrapper">
-          <div class="promo-section__content">
-            <div class="promo-section__to-whom">
-              Организатору
-            </div>
-            <h2 class="promo-section__title">
-              Biletum Finance
-            </h2>
-            <p class="promo-section__text">
-              Предоставьте вашим покупателям 93 метода оплаты и полную поддержку силами нашей команды
-            </p>
-            <div class="buttons-group">
-              <a class="bl-button" href="#">Создать сервис</a>
-              <a class="bl-button  bl-button--secondary" href="#">Подробнее</a>
-            </div>
-          </div>
-          <picture class="promo-section__image">
-            <source srcset="/img/dummy/promo-section/content-4.webp, /img/dummy/promo-section/content-4-x2.webp 2x"/>
-            <img srcset="/img/dummy/promo-section/content-4.png, /img/dummy/promo-section/content-4-x2.png 2x" src="/img/dummy/promo-section/content-4-x2.png" alt="Билетный сервис"/>
-          </picture>
+      
+      
+<article class="promo-section">
+  <div class="promo-section__wrapper">
+    <div class="promo-section__content">
+      <div class="promo-section__to-whom">
+        Организатору
+      </div>
+      <h2 class="promo-section__title">
+        Платформа мероприятия
+      </h2>
+      <p class="promo-section__text">
+        Обеспечьте вашу аудиторию инструментами для успешного участия в мероприятии
+      </p>
+      
+        <div class="buttons-group">
+          <a class="bl-button" href="#">Создать сервис</a>
+          <a class="bl-button  bl-button--secondary" href="#">Подробнее</a>
         </div>
-      </article>
+      
+    </div>
+    <picture class="promo-section__image">
+      <source srcset="/img/dummy/promo-section/content-2.webp, /img/dummy/promo-section/content-2-x2.webp 2x"/>
+      <img srcset="/img/dummy/promo-section/content-2.png, /img/dummy/promo-section/content-2-x2.png 2x" src="/img/dummy/promo-section/content-2-x2.png" alt="Билетный сервис"/>
+    </picture>
+  </div>
+</article>
+    
+      
+      
+<article class="promo-section">
+  <div class="promo-section__wrapper">
+    <div class="promo-section__content">
+      <div class="promo-section__to-whom">
+        Организатору
+      </div>
+      <h2 class="promo-section__title">
+        Biletum Finance
+      </h2>
+      <p class="promo-section__text">
+        Предоставьте вашим покупателям 93 метода оплаты и полную поддержку силами нашей команды
+      </p>
+      
+        <div class="buttons-group">
+          <a class="bl-button" href="#">Создать сервис</a>
+          <a class="bl-button  bl-button--secondary" href="#">Подробнее</a>
+        </div>
+      
+    </div>
+    <picture class="promo-section__image">
+      <source srcset="/img/dummy/promo-section/content-4.webp, /img/dummy/promo-section/content-4-x2.webp 2x"/>
+      <img srcset="/img/dummy/promo-section/content-4.png, /img/dummy/promo-section/content-4-x2.png 2x" src="/img/dummy/promo-section/content-4-x2.png" alt="Билетный сервис"/>
+    </picture>
+  </div>
+</article>
     
   </section>
-
+  
+  
   
 
 <section class="clients-slider">
+  
   <header class="section-header">
-    <h2 class="section-header__title">
-      128,000 организаторов уже с нами!
-    </h2>
-  </header>
+  <div class="section-header__main">
+    
+      <h2 class="section-header__title">
+        128,000 организаторов уже с нами!
+      </h2>
+    
+    
+  </div>
+  
+</header>
+
   <div class="swiper" data-section="our-clients">
     <div class="swiper-wrapper">
       
@@ -345,15 +371,23 @@
     <div class="swiper-pagination"></div>
   </div>
 </section>
-
+  
   
 
 <section class="clients-reviews">
+  
   <header class="section-header">
-    <h2 class="section-header__title">
-      Отзывы организаторов
-    </h2>
-  </header>
+  <div class="section-header__main">
+    
+      <h2 class="section-header__title">
+        Отзывы организаторов
+      </h2>
+    
+    
+  </div>
+  
+</header>
+  
   <div class="reviews-list">
     
       <article class="reviews-list__item">
@@ -431,32 +465,32 @@
       <div class="form-row">
         <div class="form-unit">
           <label class="form-unit__label" for="">Ваше имя</label>
-          <input class="form-unit__input  form-unit__input--error" type="text" name="" id="" value="" placeholder="Hint Text">
+          <input class="form-unit__input" type="text" name="" id="" value="" placeholder="Hint Text">
           <p class="form-unit__error">Error message</p>
         </div>
         <div class="form-unit">
           <label class="form-unit__label" for="">Фамилия</label>
           <input class="form-unit__input" type="text" name="" id="" value="" placeholder="Hint Text">
-          <p class="form-unit__error"></p>
+          <p class="form-unit__error">Error message</p>
         </div>
       </div>
       <div class="form-row">
         <div class="form-unit">
           <label class="form-unit__label" for="">E-mail</label>
           <input class="form-unit__input" type="email" name="" id="" value="" placeholder="Hint Text">
-          <p class="form-unit__error"></p>
+          <p class="form-unit__error">Error message</p>
         </div>
         <div class="form-unit">
           <label class="form-unit__label" for="">Телефон</label>
           <input class="form-unit__input" type="tel" name="" id="" value="" placeholder="Hint Text">
-          <p class="form-unit__error"></p>
+          <p class="form-unit__error">Error message</p>
         </div>
       </div>
       <div class="form-row">
         <div class="form-unit">
           <label class="form-unit__label" for="">Расскажите о вашем мероприятии</label>
           <textarea class="form-unit__input" name="" id="" placeholder="Hint Text" rows="6"></textarea>
-          <p class="form-unit__error"></p>
+          <p class="form-unit__error">Error message</p>
         </div>
       </div>
       <div class="form-row">
@@ -468,7 +502,7 @@
               Я согласен с Условиями использования и Политикой конфиденциальности EventWallet. Я согласен получать обновления продуктов и маркетинговые сообщения от Biletum
             </span>
           </label>
-          <p class="form-unit__error"></p>
+          <p class="form-unit__error">Error message</p>
         </div>
       </div>
       <div class="form-row">
@@ -479,7 +513,6 @@
     </form>
   </div>
 </section>
-  
 
       </main>
       <div class="main-layout__footer">
@@ -576,25 +609,53 @@
     </div>
 
     <div class="tech-menu">
-      <a href="/">index</a>
-      <a href="/page1.html">page1</a>
-    </div>
+  <a href="/">index</a>
+  <a href="/page1.html">page1</a>
+  <a href="/page2.html">page2</a>
+  <a href="/page3.html">page3</a>
+  <a href="/page4.html">page4</a>
+  <a href="/page5.html">page5</a>
+  <a href="/page6.html">page6</a>
+</div>
 
     
-  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script>
-    const swiper = new Swiper('[data-section="our-clients"]', {
-      spaceBetween: 30,
-      slidesPerView: 6,
-      slidesPerGroup: 6,
-      loopAdditionalSlides: 6,
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
+  const swiper = new Swiper('[data-section="our-clients"]', {
+    breakpoints: {
+      230: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        loopAdditionalSlides: 2
+      },
+      660: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        loopAdditionalSlides: 3
+      },
+      890: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+        loopAdditionalSlides: 4
+      },
+      1110: {
+        slidesPerView: 5,
+        slidesPerGroup: 5,
+        loopAdditionalSlides: 5
+      },
+      1340: {
+        slidesPerView: 6,
+        slidesPerGroup: 6,
+        loopAdditionalSlides: 6
       }
-    });
-  </script>
+    },
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+</script>
 
   </body>
 </html>

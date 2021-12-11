@@ -1,0 +1,52 @@
+<section class="pricing-section">
+  <h2 class="pricing-section__title">
+    Biletum Pricing
+  </h2>
+  <p class="pricing-section__description">
+    Выберите оптимальный пакет
+  </p>
+
+  <div class="pricing-section__list">
+    {% set tariffs = [
+      {
+        name: "XS",
+        price: "$49",
+        limit: "100",
+        overprice: "$1.00"
+      },
+      {
+        name: "S",
+        price: "$129",
+        limit: "300",
+        overprice: "$0.70"
+      },
+      {
+        name: "M",
+        price: "$239",
+        limit: "600",
+        overprice: "$0.50"
+      },
+      {
+        name: "L",
+        price: "$349",
+        limit: "1,000",
+        overprice: "$0.40"
+      },
+      {
+        name: "XL",
+        price: "$649",
+        limit: "3,000",
+        overprice: "$0.30"
+      },
+      {
+        name: "XXL",
+        price: "$1,299",
+        limit: "10,000",
+        overprice: "$0.20"
+      }
+    ]  %}
+    {% for tariff in tariffs %}
+      {% include "./_pricing-item.html" %}
+    {% endfor %}
+  </div>
+</section>

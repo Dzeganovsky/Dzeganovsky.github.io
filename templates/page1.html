@@ -1,90 +1,59 @@
 {% extends "blocks/_layout.html" %}
-{% set promos = [
-    {
-      toWhom: "Организатору",
-      title: "Билетный сервис",
-      text: "Обеспечьте успешную продажу билетов и онлайн-регистрацию на ваше мероприятие",
-      image: "content-1"
-    },
-    {
-      toWhom: "Организатору",
-      title: "Сервис дистрибуции ",
-      text: "Привлекайте покупателей и обеспечьте рост продажи билетов, используя партнерскую сеть Biletum",
-      image: "content-3"
-    },
-    {
-      toWhom: "Организатору",
-      title: "Платформа мероприятия",
-      text: "Обеспечьте вашу аудиторию инструментами для успешного участия в мероприятии",
-      image: "content-2"
-    },
-    {
-      toWhom: "Организатору",
-      title: "Biletum Finance",
-      text: "Предоставьте вашим покупателям 93 метода оплаты и полную поддержку силами нашей команды",
-      image: "content-4"
-    }
-] %}
+
 {% block content %}
-  <!-- topSection -->
   {% set topSectionData = {
     title: "Единый сервис для<br/>организаторов мероприятий",
-    text: "",
-    bgImage: "",
     buttons: false
   } %}
   {% include "./blocks/_top-section.html" %}
-  <!-- ****** -->
-  
+
   <section class="promo-list">
+    {% set promos = [
+        {
+          toWhom: "Организатору",
+          title: "Билетный сервис",
+          text: "Обеспечьте успешную продажу билетов и онлайн-регистрацию на ваше мероприятие",
+          image: "content-1",
+          buttons: true
+        },
+        {
+          toWhom: "Организатору",
+          title: "Сервис дистрибуции ",
+          text: "Привлекайте покупателей и обеспечьте рост продажи билетов, используя партнерскую сеть Biletum",
+          image: "content-3",
+          buttons: true
+        },
+        {
+          toWhom: "Организатору",
+          title: "Платформа мероприятия",
+          text: "Обеспечьте вашу аудиторию инструментами для успешного участия в мероприятии",
+          image: "content-2",
+          buttons: true
+        },
+        {
+          toWhom: "Организатору",
+          title: "Biletum Finance",
+          text: "Предоставьте вашим покупателям 93 метода оплаты и полную поддержку силами нашей команды",
+          image: "content-4",
+          buttons: true
+        }
+    ] %}
     {% for promo in promos %}
-      <article class="promo-section">
-        <div class="promo-section__wrapper">
-          <div class="promo-section__content">
-            <div class="promo-section__to-whom">
-              {{ promo.toWhom }}
-            </div>
-            <h2 class="promo-section__title">
-              {{ promo.title }}
-            </h2>
-            <p class="promo-section__text">
-              {{ promo.text }}
-            </p>
-            <div class="buttons-group">
-              <a class="bl-button" href="#">Создать сервис</a>
-              <a class="bl-button  bl-button--secondary" href="#">Подробнее</a>
-            </div>
-          </div>
-          <picture class="promo-section__image">
-            <source srcset="/img/dummy/promo-section/{{ promo.image }}.webp, /img/dummy/promo-section/{{ promo.image }}-x2.webp 2x"/>
-            <img srcset="/img/dummy/promo-section/{{ promo.image }}.png, /img/dummy/promo-section/{{ promo.image }}-x2.png 2x" src="/img/dummy/promo-section/{{ promo.image }}-x2.png" alt="Билетный сервис"/>
-          </picture>
-        </div>
-      </article>
+      {% set promoData = promo %}
+      {% include "./blocks/_promo-section.html" %}
     {% endfor %}
   </section>
-
+  
+  {% set clientSlider = {
+    title: "128,000 организаторов уже с нами!"
+  } %}
   {% include "./blocks/_clients-slider.html" %}
-
+  
   {% include "./blocks/_clients-reviews.html" %}
 
   {% include "./blocks/_join-us.html" %}
-  
 {% endblock %}
 
 {% block jsPerPage %}
-  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('[data-section="our-clients"]', {
-      spaceBetween: 30,
-      slidesPerView: 6,
-      slidesPerGroup: 6,
-      loopAdditionalSlides: 6,
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      }
-    });
-  </script>
+  {% include "./blocks/_clients-swiper-settings.html" %}
 {% endblock %}

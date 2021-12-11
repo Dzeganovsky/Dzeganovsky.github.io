@@ -1,0 +1,34 @@
+<section class="our-advantages">
+  <div class="our-advantages__list">
+    {% set toolSections = [
+      {
+        image: "our-advantages-1.svg",
+        title: "Поддержка",
+        text: "Полная поддержка ваших покупателей и клиентов"
+      },
+      {
+        image: "our-advantages-2.svg",
+        title: "Документы",
+        text: "Обеспечение документооборота с покупателями"
+      },
+      {
+        image: "our-advantages-3.svg",
+        title: "Оплата",
+        text: "Процессинг, 93 метода оплаты, включая wechat-pay"
+      },
+      {
+        image: "our-advantages-4.svg",
+        title: "Обслуживание",
+        text: "Обслуживание возвратов за купленные билеты"
+      },
+      {
+        image: "our-advantages-5.svg",
+        title: "Вывод",
+        text: "Вывод средств организатору по запросу, или периодическими выплатами"
+      }
+    ] %}
+    {% for toolSection in toolSections %}
+      {% include "./_one-tool-item.html" %}
+    {% endfor %}
+  </div>
+</section>

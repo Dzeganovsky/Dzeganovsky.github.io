@@ -20,11 +20,11 @@
 ] %}
 
 <section class="clients-reviews">
-  <header class="section-header">
-    <h2 class="section-header__title">
-      Отзывы организаторов
-    </h2>
-  </header>
+  {% set sectionHeader = {
+    title: "Отзывы организаторов"
+  } %}
+  {% include "./_section-header.html" %}
+  
   <div class="reviews-list">
     {% for item in clients %}
       <article class="reviews-list__item">

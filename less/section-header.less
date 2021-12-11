@@ -1,9 +1,15 @@
 .section-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  row-gap: 1.6rem;
   margin-bottom: 3.2rem;
   padding-top: 1.4rem;
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   &__title {
     flex-grow: 1;

@@ -1,0 +1,37 @@
+<script>
+  const swiper = new Swiper('[data-section="our-clients"]', {
+    breakpoints: {
+      230: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        loopAdditionalSlides: 2
+      },
+      660: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        loopAdditionalSlides: 3
+      },
+      890: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+        loopAdditionalSlides: 4
+      },
+      1110: {
+        slidesPerView: 5,
+        slidesPerGroup: 5,
+        loopAdditionalSlides: 5
+      },
+      1340: {
+        slidesPerView: 6,
+        slidesPerGroup: 6,
+        loopAdditionalSlides: 6
+      }
+    },
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+</script>

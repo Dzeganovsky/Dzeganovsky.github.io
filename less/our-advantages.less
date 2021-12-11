@@ -1,0 +1,17 @@
+@import "_mixins.less";
+
+.our-advantages {
+  padding-top: 4.4rem;
+  padding-bottom: 6.4rem;
+
+  &__list {
+    .centered-container();
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media screen and (min-width: 760px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

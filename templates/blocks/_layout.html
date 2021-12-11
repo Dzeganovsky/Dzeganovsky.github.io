@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, min-scale=1">
     <title>Biletum</title>
     <meta name="description" content="">
     <meta property="og:description" content="">
@@ -28,6 +28,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
 
     <link href="/dist/style.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   </head>
   <body>
     <div class="main-layout">
@@ -43,10 +45,7 @@
       </div>
     </div>
 
-    <div class="tech-menu">
-      <a href="/">index</a>
-      <a href="/page1.html">page1</a>
-    </div>
+    {% include "./____tech-menu.html" %}
 
     {% block jsPerPage %}{% endblock %}
   </body>

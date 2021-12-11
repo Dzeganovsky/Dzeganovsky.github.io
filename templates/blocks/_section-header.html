@@ -1,0 +1,19 @@
+<header class="section-header">
+  <div class="section-header__main">
+    {% if sectionHeader.title %}
+      <h2 class="section-header__title">
+        {{ sectionHeader.title }}
+      </h2>
+    {% endif %}
+    {% if sectionHeader.link %}
+      <a class="section-header__link" href="#">
+        Показать Все
+      </a>
+    {% endif %}
+  </div>
+  {% if sectionHeader.description %}
+    <p class="section-header__description">
+      {{ sectionHeader.description }}
+    </p>
+  {% endif %}
+</header>

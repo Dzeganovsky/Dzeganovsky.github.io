@@ -1,0 +1,36 @@
+@import "_mixins.less";
+
+.pricing-section {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+
+  &__title,
+  &__description {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 1.6rem;
+  }
+
+  &__description {
+    margin-bottom: 4rem;
+  }
+
+  &__list {
+    .centered-container();
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+
+    @media screen and (min-width: 660px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (min-width: 1190px) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+}

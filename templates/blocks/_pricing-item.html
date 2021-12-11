@@ -1,0 +1,29 @@
+<article class="pricing-item">
+  <header class="pricing-item__name">
+    {{ tariff.name }}
+  </header>
+  <div class="pricing-item__description">
+    <p class="pricing-item__section">
+      <strong class="pricing-item__value">
+        {{ tariff.price }}
+      </strong>
+      <span class="pricing-item__hint">в месяц</span>
+    </p>
+    <p class="pricing-item__section">
+      <span class="pricing-item__hint">Лимит билетов</span>
+      <strong class="pricing-item__value">
+        {{ tariff.limit }}
+      </strong>
+    </p>
+    <p class="pricing-item__section">
+      <span class="pricing-item__hint">сверх лимита</span>
+      <strong class="pricing-item__value">
+        {{ tariff.overprice }}
+      </strong>
+      <span class="pricing-item__hint">за билет</span>
+    </p>
+  </div>
+  <a class="pricing-item__buy" href="#">
+    Купить
+  </a>
+</article>

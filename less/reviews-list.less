@@ -1,7 +1,12 @@
 .reviews-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2.4rem;
+  align-items: start;
+
+  @media screen and (min-width: 910px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   &__item {
     flex-grow: 1;

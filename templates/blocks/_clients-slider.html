@@ -62,11 +62,12 @@
 ] %}
 
 <section class="clients-slider">
-  <header class="section-header">
-    <h2 class="section-header__title">
-      128,000 организаторов уже с нами!
-    </h2>
-  </header>
+  {% set sectionHeader = {
+    title: clientSlider.title,
+    description:  clientSlider.description
+  } %}
+  {% include "./_section-header.html" %}
+
   <div class="swiper" data-section="our-clients">
     <div class="swiper-wrapper">
       {% for item in clients %}

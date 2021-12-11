@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, min-scale=1">
     <title>Biletum</title>
     <meta name="description" content="">
     <meta property="og:description" content="">
@@ -28,6 +28,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
 
     <link href="/dist/style.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   </head>
   <body>
     <div class="main-layout">
@@ -108,14 +110,22 @@
   <!-- ****** -->
 
   <section class="tiles-grid">
+    
     <header class="section-header">
+  <div class="section-header__main">
+    
       <h2 class="section-header__title">
         В Киеве сегодня
       </h2>
+    
+    
       <a class="section-header__link" href="#">
         Показать Все
       </a>
-    </header>
+    
+  </div>
+  
+</header>
     <div class="tiles-grid__content">
       
         
@@ -562,32 +572,41 @@
       
     </div>
   </section>
+
   <section class="are-you-organizer">
-    <div class="are-you-organizer__wrapper">
-      <h2 class="are-you-organizer__title">Вы организатор мероприятия?</h2>
-      <p class="are-you-organizer__text">
-        Продавайте билеты на свои мероприятия быстро и выгодно, без регистрации и смс!<br/> Сто тысяч партнеров помогут вам окупить аренду Олимпийского стадиона уже сейчас!
-      </p>
-      <div>
-        <a class="bl-button" href="#">
-          Продавать билеты
-        </a>
-        <a class="bl-button  bl-button--secondary" href="#">
-          Стать партнером
-        </a>
-      </div>
+  <div class="are-you-organizer__wrapper">
+    <h2 class="are-you-organizer__title">Вы организатор мероприятия?</h2>
+    <p class="are-you-organizer__text">
+      Продавайте билеты на свои мероприятия быстро и выгодно, без регистрации и смс!<br/> Сто тысяч партнеров помогут вам окупить аренду Олимпийского стадиона уже сейчас!
+    </p>
+    <div>
+      <a class="bl-button" href="#">
+        Продавать билеты
+      </a>
+      <a class="bl-button  bl-button--secondary" href="#">
+        Стать партнером
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
   <section class="event-slider">
+    
     <header class="section-header">
+  <div class="section-header__main">
+    
       <h2 class="section-header__title">
         Мебельные мероприятия
       </h2>
+    
+    
       <a class="section-header__link" href="#">
         Показать Все
       </a>
-    </header>
+    
+  </div>
+  
+</header>
     <div class="swiper" data-section="tiles">
       <div class="swiper-wrapper">
         
@@ -1065,14 +1084,23 @@
   </section>
 
   <section class="event-slider">
+    
     <header class="section-header">
+  <div class="section-header__main">
+    
       <h2 class="section-header__title">
         Мебельные мероприятия
       </h2>
+    
+    
       <a class="section-header__link" href="#">
         Показать Все
       </a>
-    </header>
+    
+  </div>
+  
+</header>
+
     <div class="swiper" data-section="tiles">
       <div class="swiper-wrapper">
         
@@ -1548,6 +1576,40 @@
       <div class="swiper-pagination"></div>
     </div>
   </section>
+
+  <script>
+    const swiper = new Swiper('[data-section="tiles"]', {
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            loopAdditionalSlides: 1
+          },
+          640: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            loopAdditionalSlides: 2
+          },
+          960: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            loopAdditionalSlides: 3
+          },
+          1280: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+            loopAdditionalSlides: 4
+          }
+        },
+        spaceBetween: 8,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
+      }
+    );
+  </script>
 
       </main>
       <div class="main-layout__footer">
@@ -1644,25 +1706,15 @@
     </div>
 
     <div class="tech-menu">
-      <a href="/">index</a>
-      <a href="/page1.html">page1</a>
-    </div>
+  <a href="/">index</a>
+  <a href="/page1.html">page1</a>
+  <a href="/page2.html">page2</a>
+  <a href="/page3.html">page3</a>
+  <a href="/page4.html">page4</a>
+  <a href="/page5.html">page5</a>
+  <a href="/page6.html">page6</a>
+</div>
 
     
-  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('[data-section="tiles"]', {
-      spaceBetween: 8,
-      slidesPerView: 4,
-      slidesPerGroup: 4,
-      loopAdditionalSlides: 4,
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      }
-    });
-  </script>
-
   </body>
 </html>
