@@ -56,7 +56,6 @@
             </div>
           </div>
           <picture class="promo-section__image">
-            <source srcset="/img/dummy/promo-section/{{ promo.image }}.avif, /img/dummy/promo-section/{{ promo.image }}-x2.avif 2x"/>
             <source srcset="/img/dummy/promo-section/{{ promo.image }}.webp, /img/dummy/promo-section/{{ promo.image }}-x2.webp 2x"/>
             <img srcset="/img/dummy/promo-section/{{ promo.image }}.png, /img/dummy/promo-section/{{ promo.image }}-x2.png 2x" src="/img/dummy/promo-section/{{ promo.image }}-x2.png" alt="Билетный сервис"/>
           </picture>
@@ -68,7 +67,7 @@
   {% include "./blocks/_clients-slider.html" %}
 
   {% include "./blocks/_clients-reviews.html" %}
-  
+
   {% include "./blocks/_join-us.html" %}
   
 {% endblock %}

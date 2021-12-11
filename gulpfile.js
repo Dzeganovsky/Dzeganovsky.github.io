@@ -20,12 +20,6 @@ function iWebp() {
           .pipe(gulp.dest('./img/dummy'));
 }
 
-function iAvif() {
-  return gulp.src('./img/dummy/**/*.png')
-          .pipe(avif())
-          .pipe(gulp.dest('./img/dummy'));
-}
-
 function compileLess() {
   return gulp.src("./less/**/*.less")
           .pipe(less())
@@ -36,7 +30,7 @@ function compileLess() {
 function watcher(done) {
   watch(["./less/**/*.less"], parallel(compileLess));
   watch(["./templates/**/*.html"], parallel(compileNjs));
-  watch(["./img/dummy/*.png"], parallel(iWebp, iAvif));
+  watch(["./img/dummy/*.png"], parallel(iWebp));
 
   done();
 }
@@ -53,5 +47,4 @@ function dev(done) {
   done();
 };
 
-exports.img = parallel(iWebp, iAvif);
-exports.serve = series(parallel(compileNjs, compileLess, iWebp, iAvif), dev, watcher);
+exports.serve = series(parallel(compileNjs, compileLess, iWebp), dev, watcher);

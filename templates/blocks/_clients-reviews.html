@@ -29,7 +29,6 @@
     {% for item in clients %}
       <article class="reviews-list__item">
         <picture class="reviews-list__logo">
-          <source srcset="/img/dummy/clients/{{item.logo}}.avif" />
           <source srcset="/img/dummy/clients/{{item.logo}}.webp" />
           <img srcset="/img/dummy/clients/{{item.logo}}.png" src="/img/dummy/clients/{{item.logo}}.png" alt="{{ item.organization }}" />
         </picture>
