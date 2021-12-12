@@ -748,7 +748,9 @@ submit {
     column-gap: 2rem;
     row-gap: 0;
     grid-template-columns: min-content min-content auto;
+    grid-template-rows: auto;
     align-items: stretch;
+    padding: 0;
     min-height: var(--page-header-height);
     transform: none;
   }
@@ -767,6 +769,7 @@ submit {
 @media screen and (min-width: 1380px) {
   .main-header .buttons-group {
     justify-content: flex-end;
+    align-self: center;
   }
 }
 .main-header .form-button {
