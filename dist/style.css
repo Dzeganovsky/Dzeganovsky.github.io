@@ -1,3 +1,48 @@
+.about-us {
+  width: 100%;
+  max-width: var(--max-page-width);
+  margin: 0 auto;
+  padding-left: var(--page-aside-indent-mobile);
+  padding-right: var(--page-aside-indent-mobile);
+  margin-bottom: 9rem;
+  padding-top: 3.6rem;
+}
+@media screen and (min-width: 1380px) {
+  .about-us {
+    padding-left: var(--page-aside-indent);
+    padding-right: var(--page-aside-indent);
+  }
+}
+.about-us__image {
+  display: block;
+  margin-bottom: 4.8rem;
+}
+.about-us__image > img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+.about-us__content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+@media screen and (min-width: 700px) {
+  .about-us__content {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 700px) {
+  .about-us__item {
+    flex-grow: 1;
+    max-width: 44rem;
+  }
+}
+.about-us__title {
+  margin-bottom: 0.8rem;
+}
+
 .are-you-organizer {
   padding-top: 4.4rem;
   padding-bottom: 6.4rem;
@@ -817,7 +862,7 @@ submit {
 }
 .mobileMenuActive .menu-button::before,
 .mobileMenuActive .menu-button::after {
-  width: 85%;
+  width: 84%;
 }
 .mobileMenuActive .menu-button::before {
   transform: translateX(0.5rem) rotate(45deg);
@@ -1019,15 +1064,9 @@ submit {
   }
 }
 
-.promo-list .promo-section:nth-child(even) {
+.promo-section:not(.promo-section--light):nth-child(even) {
   background-color: var(--blue-08);
 }
-@media screen and (min-width: 760px) {
-  .promo-list .promo-section:nth-child(even) .promo-section__wrapper {
-    flex-direction: row-reverse;
-  }
-}
-
 .promo-section__wrapper {
   width: 100%;
   max-width: var(--max-page-width);
@@ -1059,6 +1098,17 @@ submit {
 @media screen and (min-width: 1100px) {
   .promo-section__wrapper {
     column-gap: 4rem;
+  }
+}
+@media screen and (min-width: 760px) {
+  .promo-section--reverse .promo-section__wrapper,
+  .promo-section:nth-child(even) .promo-section__wrapper {
+    flex-direction: row-reverse;
+  }
+}
+@media screen and (min-width: 760px) {
+  .promo-section--reverse:nth-child(even) .promo-section__wrapper {
+    flex-direction: row;
   }
 }
 .promo-section__content {

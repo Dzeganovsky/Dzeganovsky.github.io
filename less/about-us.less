@@ -1,0 +1,40 @@
+@import "_mixins.less";
+
+.about-us {
+  .centered-container();
+  margin-bottom: 9rem;
+  padding-top: 3.6rem;
+
+  &__image {
+    display: block;
+    margin-bottom: 4.8rem;
+
+    > img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @media screen and (min-width: 700px) {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+
+  &__item {
+    @media screen and (min-width: 700px) {
+      flex-grow: 1;
+      max-width: 44rem;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0.8rem;
+  }
+}

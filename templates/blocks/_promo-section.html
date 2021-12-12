@@ -1,15 +1,17 @@
 
-<article class="promo-section">
+<article class="promo-section  {% if promoData.isLight %}promo-section--light{% endif %}  {% if promoData.isReverse %}promo-section--reverse{% endif %}">
   <div class="promo-section__wrapper">
     <div class="promo-section__content">
-      <div class="promo-section__to-whom">
-        {{ promoData.toWhom }}
-      </div>
+      {% if promoData.toWhom %}
+        <div class="promo-section__to-whom">
+          {{ promoData.toWhom }}
+        </div>
+      {% endif %}
       <h2 class="promo-section__title">
         {{ promoData.title }}
       </h2>
       <p class="promo-section__text">
-        {{ promoData.text }}
+        {{ promoData.text | safe }}
       </p>
       {% if promoData.buttons %}
         <div class="buttons-group">

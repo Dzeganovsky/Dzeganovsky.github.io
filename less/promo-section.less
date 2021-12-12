@@ -1,6 +1,10 @@
 @import "_mixins.less";
 
 .promo-section {
+  &:not(.promo-section--light):nth-child(even) {
+    background-color: var(--blue-08);
+  }
+
   &__wrapper {
     .centered-container();
     display: flex;
@@ -20,6 +24,17 @@
 
     @media screen and (min-width: 1100px) {
       column-gap: 4rem;
+    }
+  }
+  &--reverse &__wrapper,
+  &:nth-child(even) &__wrapper {
+    @media screen and (min-width: 760px) {
+      flex-direction: row-reverse;
+    }
+  }
+  &--reverse:nth-child(even) &__wrapper  {
+    @media screen and (min-width: 760px) {
+      flex-direction: row;
     }
   }
 
