@@ -1,42 +1,75 @@
-<header
-  class="main-header">
-  <!-- Logo block -->
+<header class="main-header">
   <a class="biletum-logo" href="/">
     <img src="/img/biletum-logo.svg" alt="">
   </a>
-  <!-- /Logo block -->
-  <!-- Main nav -->
-  <nav class="main-menu">
-    <ul class="main-menu__list">
-      <li class="main-menu__item">
-        <a class="main-menu__link" href="#">
-          Организаторам
-        </a>
-      </li>
-      <li class="main-menu__item">
-        <a class="main-menu__link" href="#">
-          Партнерам
-        </a>
-      </li>
-      <li class="main-menu__item">
-        <a class="main-menu__link" href="#">
-          Афиша Мероприятий
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <!-- /Main nav -->
-  <!-- Lang switcher -->
-  <section></section>
-  <!-- /Lang switcher -->
-  <!-- Header-controls -->
-  <section class="buttons-group">
-    <a class="bl-button  bl-button--secondary" href="#">
-      Вход/Регистрация
-    </a>
-    <a class="bl-button" href="#">
-      Создать мероприятие
-    </a>
+  <button class="menu-button" type="button" data-nemu-button>
+    <span class="menu-button__icon"></span>
+  </button>
+
+  <section class="main-header__content">
+    <nav class="main-menu">
+      <ul class="main-menu__list">
+        <li class="main-menu__item">
+          <a class="main-menu__link" href="#">
+            Организаторам
+          </a>
+        </li>
+        <li class="main-menu__item">
+          <a class="main-menu__link" href="#">
+            Партнерам
+          </a>
+        </li>
+        <li class="main-menu__item">
+          <a class="main-menu__link" href="#">
+            Афиша Мероприятий
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="lang-switcher  dropmic" data-dropdown data-dropmic-direction="bottom-right">
+      <button data-dropmic-btn>
+        <span class="lang-switcher__item">
+          <img class="lang-switcher__icon" src="/flags/ru.png" alt="ru" />
+          Рус
+        </span>
+      </button>
+      <ul class="dropmic-menu" aria-hidden="true">
+        <li class="dropmic-item">
+          <a class="dropmic-link" href="#">
+            <span class="lang-switcher__item">
+              <img class="lang-switcher__icon" src="/flags/ua.png" alt="ua" />
+              Укр
+            </span>
+          </a>
+        </li>
+        <li class="dropmic-item">
+          <a class="dropmic-link" href="#">
+            <span class="lang-switcher__item">
+              <img class="lang-switcher__icon" src="/flags/gb.png" alt="gb" />
+              Eng
+            </span>
+          </a>
+        </li>
+        <li class="dropmic-item">
+          <a class="dropmic-link" href="#">
+            <span class="lang-switcher__item">
+              <img class="lang-switcher__icon" src="/flags/cn.png" alt="cn" />
+              Chi
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="buttons-group  buttons-group--end">
+      <a class="form-button  form-button--secondary" href="#">
+        Вход/Регистрация
+      </a>
+      <a class="form-button" href="#">
+        Создать мероприятие
+      </a>
+    </div>
   </section>
-  <!-- /Header-controlsr -->
 </header>

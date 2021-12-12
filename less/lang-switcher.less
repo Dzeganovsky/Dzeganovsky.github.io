@@ -1,0 +1,25 @@
+.lang-switcher {
+  &__item {
+    display: flex;
+    align-items: center;
+    column-gap: 0.6rem;
+  }
+
+  &__icon {
+    width: 1.4rem;
+  }
+
+  @media screen and (max-width: 1370px) {
+    [data-dropmic-btn] {
+      padding-top: 1.4rem;
+      padding-bottom: 1.4rem;
+      padding-left: 0;
+    }
+
+    & .dropmic-menu,
+    &.dropmic--show [data-dropmic-btn] {
+      box-shadow: none;
+    }
+
+  }
+}

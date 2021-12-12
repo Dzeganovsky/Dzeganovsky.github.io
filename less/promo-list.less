@@ -3,7 +3,9 @@
     background-color: var(--blue-08);
 
     .promo-section__wrapper {
-      flex-direction: row-reverse;
+      @media screen and (min-width: 760px) {
+        flex-direction: row-reverse;
+      }
     }
   }
 }

@@ -2,10 +2,64 @@
 
 .main-header {
   .centered-container();
-  display: grid;
-  column-gap: 4rem;
-  grid-template-columns: min-content min-content auto min-content;
+  position: relative;
+  display: flex;
   align-items: center;
-  padding-top: 2.1rem;
-  padding-bottom: 1.7rem;
+  justify-content: space-between;
+  height: var(--page-header-height-mobile);
+
+  @media screen and (min-width: 1380px) {
+    column-gap: 4rem;
+    height: auto;
+  }
+
+  &__content {
+    position: fixed;
+    left: 0;
+    top: var(--page-header-height-mobile);
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: grid;
+    grid-template-rows: min-content min-content auto;
+    row-gap: 3.6rem;
+    padding: 1.6rem;
+    background-color: white;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+
+    .mobileMenuActive & {
+      transform: translateX(0);
+    }
+
+    @media screen and (min-width: 1380px) {
+      position: static;
+      flex-grow: 1;
+      column-gap: 2rem;
+      row-gap: 0;
+      grid-template-columns: min-content min-content auto;
+      align-items: stretch;
+      min-height: var(--page-header-height);
+      transform: none;
+    }
+  }
+
+  .buttons-group {
+    align-self: end;
+    flex-direction: column;
+    align-items: stretch;
+
+    @media screen and (min-width: 600px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+    @media screen and (min-width: 1380px) {
+      justify-content: flex-end;
+    }
+  }
+
+  .form-button {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
 }

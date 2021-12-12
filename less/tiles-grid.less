@@ -2,22 +2,30 @@
 
 .tiles-grid {
   .centered-container();
-  
 
   &__content {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
     justify-content: space-between;
     gap: 1.6rem;
     padding-bottom: 2.4rem;
 
+    @media screen and (min-width: 550px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 1100px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
     .tile-card:first-child {
-      grid-row-start: 1;
-      grid-row-end: 3;
-      grid-column-start: 1;
-      grid-column-end: 3;
-      height: auto;
-  
+      @media screen and (min-width: 550px) {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+
       .tile-card__image {
         padding-top: 67%;
       }

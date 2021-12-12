@@ -2,9 +2,13 @@
   position: fixed;
   left: 0;
   top: 0;
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: 1rem;
   background-color: white;
   font-size: 1rem;
+
+  @media screen and (min-width: 1380px) {
+    display: flex;
+  }
 }

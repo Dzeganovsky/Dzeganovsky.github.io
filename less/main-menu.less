@@ -1,14 +1,24 @@
 .main-menu {
-  margin: 0 0 0 2.8rem;
+  margin: 0;
   padding: 0;
+
+  @media screen and (min-width: 1380px) {
+    align-self: center;
+    margin-left: 2.8rem;
+  }
 
   &__list {
     display: flex;
-    align-items: center;
-    column-gap: 3.8rem;
+    flex-direction: column;
+    gap: 3.6rem;
     list-style-type: none;
     margin: 0;
     padding: 0;
+
+    @media screen and (min-width: 1380px) {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   &__item {

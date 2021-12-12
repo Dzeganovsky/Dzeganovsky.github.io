@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru-RU">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta name="viewport" content="width=device-width, initial-scale=1, min-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Biletum</title>
     <meta name="description" content="">
     <meta property="og:description" content="">
@@ -30,6 +30,7 @@
     <link href="/dist/style.css" rel="stylesheet">
 
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="/js/dropmic.min.js"></script>
   </head>
   <body>
     <div class="main-layout">
@@ -48,5 +49,56 @@
     {% include "./____tech-menu.html" %}
 
     {% block jsPerPage %}{% endblock %}
+    <script>
+      /* Код для дропдаунов */
+      if(document.querySelector('[data-dropdown]')) {
+        const dropmic = new Dropmic(document.querySelector('[data-dropdown]'));
+      }
+
+      /* Код для каруселей партнеров */
+      if(document.querySelector('[data-section="our-clients"]')) {
+        const swiper = new Swiper('[data-section="our-clients"]', {
+          breakpoints: {
+            230: {
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+              loopAdditionalSlides: 2
+            },
+            660: {
+              slidesPerView: 3,
+              slidesPerGroup: 3,
+              loopAdditionalSlides: 3
+            },
+            890: {
+              slidesPerView: 4,
+              slidesPerGroup: 4,
+              loopAdditionalSlides: 4
+            },
+            1110: {
+              slidesPerView: 5,
+              slidesPerGroup: 5,
+              loopAdditionalSlides: 5
+            },
+            1340: {
+              slidesPerView: 6,
+              slidesPerGroup: 6,
+              loopAdditionalSlides: 6
+            }
+          },
+          spaceBetween: 30,
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          }
+        });
+      };
+
+      /* Код для мобильного меню */
+      const mobileMenuButton = document.querySelector('[data-nemu-button]');
+      mobileMenuButton.addEventListener('click', () => {
+        document.querySelector('body').classList.toggle("mobileMenuActive");
+      });
+    </script>
   </body>
 </html>

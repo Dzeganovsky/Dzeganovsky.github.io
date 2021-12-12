@@ -1,4 +1,4 @@
-.bl-button {
+.form-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -19,13 +19,29 @@
   transition: background-color 0.24s ease;
 
   &:hover {
-    background-color: var(--cyan-80);
+    background-color: var(--mint-100);
+    color: white;
     text-decoration: none;
   }
 
   &:disabled {
-    background-color: white;
+    background-color:  var(--blue-08);
     color: var(--blue-50);
+  }
+
+  &--dark {
+    background-color: var(--cyan-80);
+    color: white;
+
+    &:hover {
+      background-color: var(--mint-100);
+      text-decoration: none;
+    }
+  
+    &:disabled {
+      background-color: var(--blue-60);
+      color: var(--blue-50);
+    }
   }
 
   &--secondary {
@@ -33,13 +49,30 @@
     color: var(--cyan-100);
 
     &:hover {
-      background-color: var(--cyan-10);
+      background-color: var(--mint-10);
+      color: var(--mint-100);
       text-decoration: none;
     }
   
     &:disabled {
       background-color: white;
       color: var(--blue-50);
+    }
+  }
+
+  &--secondary-dark {
+    background-color: var(--blue-80);
+    color: white;
+
+    &:hover {
+      background-color:var(--blue-80);
+      color: var(--mint-60);
+      text-decoration: none;
+    }
+  
+    &:disabled {
+      background-color: var(--blue-80);
+      color: var(--blue-60);
     }
   }
 }

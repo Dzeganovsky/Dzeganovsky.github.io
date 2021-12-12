@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru-RU">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta name="viewport" content="width=device-width, initial-scale=1, min-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Biletum</title>
     <meta name="description" content="">
     <meta property="og:description" content="">
@@ -30,52 +30,87 @@
     <link href="/dist/style.css" rel="stylesheet">
 
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="/js/dropmic.min.js"></script>
   </head>
   <body>
     <div class="main-layout">
       <div class="main-layout__header">
-        <header
-  class="main-header">
-  <!-- Logo block -->
+        <header class="main-header">
   <a class="biletum-logo" href="/">
     <img src="/img/biletum-logo.svg" alt="">
   </a>
-  <!-- /Logo block -->
-  <!-- Main nav -->
-  <nav class="main-menu">
-    <ul class="main-menu__list">
-      <li class="main-menu__item">
-        <a class="main-menu__link" href="#">
-          Организаторам
-        </a>
-      </li>
-      <li class="main-menu__item">
-        <a class="main-menu__link" href="#">
-          Партнерам
-        </a>
-      </li>
-      <li class="main-menu__item">
-        <a class="main-menu__link" href="#">
-          Афиша Мероприятий
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <!-- /Main nav -->
-  <!-- Lang switcher -->
-  <section></section>
-  <!-- /Lang switcher -->
-  <!-- Header-controls -->
-  <section class="buttons-group">
-    <a class="bl-button  bl-button--secondary" href="#">
-      Вход/Регистрация
-    </a>
-    <a class="bl-button" href="#">
-      Создать мероприятие
-    </a>
+  <button class="menu-button" type="button" data-nemu-button>
+    <span class="menu-button__icon"></span>
+  </button>
+
+  <section class="main-header__content">
+    <nav class="main-menu">
+      <ul class="main-menu__list">
+        <li class="main-menu__item">
+          <a class="main-menu__link" href="#">
+            Организаторам
+          </a>
+        </li>
+        <li class="main-menu__item">
+          <a class="main-menu__link" href="#">
+            Партнерам
+          </a>
+        </li>
+        <li class="main-menu__item">
+          <a class="main-menu__link" href="#">
+            Афиша Мероприятий
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="lang-switcher  dropmic" data-dropdown data-dropmic-direction="bottom-right">
+      <button data-dropmic-btn>
+        <span class="lang-switcher__item">
+          <img class="lang-switcher__icon" src="/flags/ru.png" alt="ru" />
+          Рус
+        </span>
+      </button>
+      <ul class="dropmic-menu" aria-hidden="true">
+        <li class="dropmic-item">
+          <a class="dropmic-link" href="#">
+            <span class="lang-switcher__item">
+              <img class="lang-switcher__icon" src="/flags/ua.png" alt="ua" />
+              Укр
+            </span>
+          </a>
+        </li>
+        <li class="dropmic-item">
+          <a class="dropmic-link" href="#">
+            <span class="lang-switcher__item">
+              <img class="lang-switcher__icon" src="/flags/gb.png" alt="gb" />
+              Eng
+            </span>
+          </a>
+        </li>
+        <li class="dropmic-item">
+          <a class="dropmic-link" href="#">
+            <span class="lang-switcher__item">
+              <img class="lang-switcher__icon" src="/flags/cn.png" alt="cn" />
+              Chi
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="buttons-group  buttons-group--end">
+      <a class="form-button  form-button--secondary" href="#">
+        Вход/Регистрация
+      </a>
+      <a class="form-button" href="#">
+        Создать мероприятие
+      </a>
+    </div>
   </section>
-  <!-- /Header-controlsr -->
 </header>
+
       </div>
       <main class="main-layout__content">
         
@@ -441,10 +476,10 @@
   </section>
   <div class="main-footer__actions">
     <section class="buttons-group">
-      <a class="bl-button  bl-button--secondary" href="#">
+      <a class="form-button  form-button--secondary-dark" href="#">
         Вход/Регистрация
       </a>
-      <a class="bl-button" href="#">
+      <a class="form-button  form-button--dark" href="#">
         Создать мероприятие
       </a>
     </section>
@@ -533,43 +568,56 @@
 </div>
 
     
-  <script>
-  const swiper = new Swiper('[data-section="our-clients"]', {
-    breakpoints: {
-      230: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        loopAdditionalSlides: 2
-      },
-      660: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-        loopAdditionalSlides: 3
-      },
-      890: {
-        slidesPerView: 4,
-        slidesPerGroup: 4,
-        loopAdditionalSlides: 4
-      },
-      1110: {
-        slidesPerView: 5,
-        slidesPerGroup: 5,
-        loopAdditionalSlides: 5
-      },
-      1340: {
-        slidesPerView: 6,
-        slidesPerGroup: 6,
-        loopAdditionalSlides: 6
+    <script>
+      /* Код для дропдаунов */
+      if(document.querySelector('[data-dropdown]')) {
+        const dropmic = new Dropmic(document.querySelector('[data-dropdown]'));
       }
-    },
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    }
-  });
-</script>
 
+      /* Код для каруселей партнеров */
+      if(document.querySelector('[data-section="our-clients"]')) {
+        const swiper = new Swiper('[data-section="our-clients"]', {
+          breakpoints: {
+            230: {
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+              loopAdditionalSlides: 2
+            },
+            660: {
+              slidesPerView: 3,
+              slidesPerGroup: 3,
+              loopAdditionalSlides: 3
+            },
+            890: {
+              slidesPerView: 4,
+              slidesPerGroup: 4,
+              loopAdditionalSlides: 4
+            },
+            1110: {
+              slidesPerView: 5,
+              slidesPerGroup: 5,
+              loopAdditionalSlides: 5
+            },
+            1340: {
+              slidesPerView: 6,
+              slidesPerGroup: 6,
+              loopAdditionalSlides: 6
+            }
+          },
+          spaceBetween: 30,
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          }
+        });
+      };
+
+      /* Код для мобильного меню */
+      const mobileMenuButton = document.querySelector('[data-nemu-button]');
+      mobileMenuButton.addEventListener('click', () => {
+        document.querySelector('body').classList.toggle("mobileMenuActive");
+      });
+    </script>
   </body>
 </html>

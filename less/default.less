@@ -27,6 +27,10 @@ body {
   min-width: var(--min-page-width);
   font-size: 1.8rem;
   color: var(--blue-100);
+
+  &.mobileMenuActive {
+    overflow: hidden;
+  }
 }
 
 h1,
@@ -35,6 +39,8 @@ h3,
 h4,
 h5,
 h6 {
+  max-width: 100%;
+  word-wrap: break-word;
   font-weight: bold;
 }
 
@@ -49,4 +55,10 @@ h3 {
 }
 h4 {
   font-size: 1.6rem;
+}
+
+input,
+button,
+submit {
+  font-family: inherit;
 }

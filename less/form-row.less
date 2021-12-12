@@ -1,4 +1,9 @@
 .form-row {
   display: flex;
-  column-gap: 1.8rem;
+  flex-direction: column;
+  gap: 1.8rem;
+
+  @media screen and (min-width: 460px) {
+    flex-direction: row;
+  }
 }

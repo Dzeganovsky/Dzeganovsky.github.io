@@ -1,0 +1,69 @@
+.menu-button {
+  position: relative;
+  display: block;
+  width: 3rem;
+  height: 2.6rem;
+  background: none;
+  border: none;
+  font-size: 0.1rem;
+  color: transparent;
+
+  @media screen and (min-width: 1380px) {
+    display: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    background-color: var(--cyan-100);
+    transform-origin: 0.1rem 0;
+    transition: transform 0.3s ease;
+  }
+
+  &::before {
+    top: 0.4rem;
+  }
+
+  &::after {
+    bottom: 0.4rem;
+  }
+
+  .mobileMenuActive & {
+    &::before,
+    &::after {
+      width: 85%;
+    }
+
+    &::before {
+      transform: translateX(0.5rem) rotate(45deg);
+    }
+
+    &::after {
+      transform: translateX(0.4rem) rotate(-45deg);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    display: block;
+    width: 100%;
+    height: 0.2rem;
+    background-color: var(--cyan-100);
+    transform: translateY(-0.1rem);
+    transition: opacity 0.2s linear;
+  }
+
+  .mobileMenuActive & &__icon {
+    opacity: 0;
+  }
+}

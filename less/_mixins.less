@@ -2,6 +2,11 @@
   width: 100%;
   max-width: var(--max-page-width);
   margin: 0 auto;
-  padding-left: var(--page-aside-indent);
-  padding-right: var(--page-aside-indent);
+  padding-left: var(--page-aside-indent-mobile);
+  padding-right: var(--page-aside-indent-mobile);
+
+  @media screen and (min-width: 1380px) {
+    padding-left: var(--page-aside-indent);
+    padding-right: var(--page-aside-indent);
+  }
 }
