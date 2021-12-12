@@ -11,8 +11,8 @@
     flex-direction: column-reverse;
     align-items: center;
     row-gap: 1.2rem;
-    padding-top: 5.8rem;
-    padding-bottom: 5.8rem;
+    padding-top: 3.6rem;
+    padding-bottom: 3.6rem;
 
     @media screen and (min-width: 760px) {
       flex-direction: row;
@@ -40,6 +40,7 @@
 
   &__content {
     flex-shrink: 0;
+    padding-top: 3rem;
 
     @media screen and (min-width: 760px) {
       max-width: 60%;
@@ -87,6 +88,16 @@
 
     @media screen and (min-width: 550px) {
       flex-direction: row;
+    }
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.8rem;
+
+    ul& {
+      padding-left: 2.5rem;
     }
   }
 }

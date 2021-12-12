@@ -1,52 +1,17 @@
-<section class="pricing-section">
-  <h2 class="pricing-section__title">
-    Biletum Pricing
-  </h2>
-  <p class="pricing-section__description">
-    Выберите оптимальный пакет
-  </p>
-
-  <div class="pricing-section__list">
-    {% set tariffs = [
-      {
-        name: "XS",
-        price: "$49",
-        limit: "100",
-        overprice: "$1.00"
-      },
-      {
-        name: "S",
-        price: "$129",
-        limit: "300",
-        overprice: "$0.70"
-      },
-      {
-        name: "M",
-        price: "$239",
-        limit: "600",
-        overprice: "$0.50"
-      },
-      {
-        name: "L",
-        price: "$349",
-        limit: "1,000",
-        overprice: "$0.40"
-      },
-      {
-        name: "XL",
-        price: "$649",
-        limit: "3,000",
-        overprice: "$0.30"
-      },
-      {
-        name: "XXL",
-        price: "$1,299",
-        limit: "10,000",
-        overprice: "$0.20"
-      }
-    ]  %}
-    {% for tariff in tariffs %}
-      {% include "./_pricing-item.html" %}
-    {% endfor %}
+<article class="pricing-section">
+  <div class="pricing-section__wrapper">
+    <picture class="pricing-section__image">
+      <source srcset="/dist/img/dummy/{{ pricing.image }}.webp, /img/dummy/{{ pricing.image }}-x2.webp 2x"/>
+      <img srcset="/dist/img/dummy/{{ pricing.image }}.png, /img/dummy/{{ pricing.image }}-x2.png 2x" src="/dist/img/dummy/{{ pricing.image }}.png" alt="{{ pricing.title }}"/>
+    </picture>
+    <div class="pricing-section__content">
+      <h2 class="pricing-section__title">
+        {{ pricing.title }}
+      </h2>
+      <div class="pricing-section__text">
+        {{ pricing.text | safe }}
+      </div>
+      <a class="form-button" href="#">Начать продажу билетов</a>
+    </div>
   </div>
-</section>
+</article>

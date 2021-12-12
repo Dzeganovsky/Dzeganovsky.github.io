@@ -11,26 +11,33 @@ const webp = require('gulp-webp');
 function compileNjs() {
   return gulp.src('./templates/*.html')
           .pipe(nunjucks.compile())
-          .pipe(gulp.dest('./'));
+          .pipe(gulp.dest('./dist'));
 }
 
-function iWebp() {
-  return gulp.src('./img/dummy/**/*.png')
+function images() {
+  return gulp.src('./img/**/*.png')
+          .pipe(gulp.dest('./dist/img'))
           .pipe(webp())
-          .pipe(gulp.dest('./img/dummy'));
+          .pipe(gulp.dest('./dist/img'));
+}
+
+function copySVG() {
+  return gulp.src('./img/**/*.svg')
+          .pipe(gulp.dest('./dist/img'));
 }
 
 function compileLess() {
   return gulp.src("./less/**/*.less")
           .pipe(less())
           .pipe(concat("style.css"))
-          .pipe(gulp.dest("./dist"));
+          .pipe(gulp.dest("./dist/css"));
 }
 
 function watcher(done) {
   watch(["./less/**/*.less"], parallel(compileLess));
   watch(["./templates/**/*.html"], parallel(compileNjs));
-  watch(["./img/dummy/*.png"], parallel(iWebp));
+  watch(["./img/**/*.png"], parallel(images));
+  watch(["./img/**/*.svg"], parallel(copySVG));
 
   done();
 }
@@ -43,9 +50,10 @@ function dev(done) {
     },
   });
 
-  watch(["./*.html", "./**/*.css"]).on("change", reload);
+  watch(["./dist/*.html", "./dist/**/*.css"]).on("change", reload);
   done();
 };
 
-exports.img = parallel(iWebp);
-exports.serve = series(parallel(compileNjs, compileLess, iWebp), dev, watcher);
+exports.img = parallel(copySVG, images);
+exports.build = parallel(compileNjs, compileLess, copySVG, images);
+exports.serve = series(parallel(compileNjs, compileLess, copySVG, images), dev, watcher);

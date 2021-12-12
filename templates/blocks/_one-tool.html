@@ -1,25 +1,8 @@
 <section class="one-tool">
   <h2 class="one-tool__title">
-    Единый инструмент для организаторов мероприятий
+    Другие сервисы Biletum
   </h2>
   <div class="one-tool__list">
-    {% set toolSections = [
-      {
-        image: "one-tool-1.svg",
-        title: "Дистрибюция билетов",
-        text: "Привлекайте аудиторию и увеличьте продажи используя партнерскую платформу и сеть партнеров Biletum"
-      },
-      {
-        image: "one-tool-2.svg",
-        title: "Платформа мероприятия",
-        text: "Обеспечьте удобное и эффективное участие вашей аудитории в мероприятии, с помощью интегрированного сервиса EventsWallet"
-      },
-      {
-        image: "one-tool-3.svg",
-        title: "Biletum Finance",
-        text: "Biletum Finance обеспечит ваших покупателей 93 методами оплаты за билеты и документооборот"
-      }
-    ] %}
     {% for toolSection in toolSections %}
       {% include "./_one-tool-item.html" %}
     {% endfor %}

@@ -8,8 +8,71 @@
   } %}
   {% include "./blocks/_top-section.html" %}
 
-  {% include "./blocks/_our-advantages.html" %}
+  <section class="promo-list">
+    {% set promos = [
+        {
+          toWhom: "Организатору",
+          title: "Поддержка покупателей под ключ",
+          text: "<div class='promo-section__data'>
+            <p>Мультиязычная поддержка покупателей.</p>
+            <p>Модерация лидов, покупок, возвратов.</p>
+            <p>Полный документооборот для покупателей и организатора.</p>
+          </div>",
+          image: "content-15"
+        },
+        {
+          toWhom: "Организатору",
+          title: "Оплата за билеты",
+          text: "<div class='promo-section__data'>
+            <p>93 метода и процессингов, включая apple pay, wechat pay, alipay и другие.</p>
+            <p>64 валюты для оплаты за билеты, включая криптовалюты.</p>
+            <p>Автоматический возврат средств покупателю по решению организатора.</p>
+          </div>",
+          image: "content-15"
+        },
+        {
+          toWhom: "Организатору",
+          title: "Вывод средств за проданные билеты",
+          text: "<div class='promo-section__data'>
+            <p>Вывод средств по запросу организатора или утвержденному графику.</p>
+            <p>Вывод средств в любой валюте и юрисдикции организатора.</p>
+            <p>Проведение оплат подрядчикам и партнерам организатора.</p>
+          </div>",
+          image: "content-15"
+        }
+    ] %}
+    {% for promo in promos %}
+      {% set promoData = promo %}
+      {% include "./blocks/_promo-section.html" %}
+    {% endfor %}
+  </section>
   
+  {% set pricing = {
+    title: "Стоимость сервиса",
+    text: "<p>
+          Подключите полный пакет услуг, включая более 93 платежных систем и работу с документами под ключ <strong>всего за 4,5%</strong> от продаж билетов (включает все методы оплат за билеты)!
+        </p>",
+    image: "pricing2"
+  } %}
+  {% include "./blocks/_pricing-section.html" %}
+  
+  {% set toolSections = [
+    {
+      image: "one-tool-4.svg",
+      title: "Билетный сервис",
+      text: "Обеспечьте успешную продажу билетов и онлайн-регистрацию на ваше мероприятие"
+    },
+    {
+      image: "one-tool-2.svg",
+      title: "Платформа мероприятия",
+      text: "Обеспечьте вашу аудиторию инструментами для успешного участия в мероприятии"
+    },
+    {
+      image: "one-tool-3.svg",
+      title: "Biletum Finance",
+      text: "Предоставьте вашим покупателям 93 метода оплаты и полную поддержку силами нашей команды"
+    }
+  ] %}
   {% include "./blocks/_one-tool.html" %}
 
   {% set clientSlider = {
