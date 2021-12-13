@@ -1,65 +1,125 @@
-{% set clients = [
-    {
+{% set clients = [{
       name: "Имя партнера",
-      img: "client-1"
+      img: "BeijingHivenExhibition"
     },
     {
       name: "Имя партнера",
-      img: "client-2"
+      img: "CantonUniversal"
     },
     {
       name: "Имя партнера",
-      img: "client-3"
+      img: "CartoonFair"
     },
     {
       name: "Имя партнера",
-      img: "client-4"
+      img: "ChinaKidsExpo"
     },
     {
       name: "Имя партнера",
-      img: "client-5"
+      img: "CHINASPORTINGGOODSFEDERATION"
     },
     {
       name: "Имя партнера",
-      img: "client-6"
+      img: "CIECExhibitionCompanyLimited"
     },
     {
       name: "Имя партнера",
-      img: "client-7"
+      img: "ciodpa"
     },
     {
       name: "Имя партнера",
-      img: "client-8"
+      img: "comexposium"
     },
     {
       name: "Имя партнера",
-      img: "client-9"
+      img: "DonnorExhibition"
     },
     {
       name: "Имя партнера",
-      img: "client-10"
+      img: "Fair-Canton-logo"
     },
     {
       name: "Имя партнера",
-      img: "client-11"
+      img: "GuangzhouYifanExhibitionService"
     },
     {
       name: "Имя партнера",
-      img: "client-12"
+      img: "HaimingInternationalExhibitionGroup"
     },
     {
       name: "Имя партнера",
-      img: "client-13"
+      img: "HannoverMilano"
     },
     {
       name: "Имя партнера",
-      img: "client-14"
+      img: "MadeinChina"
     },
     {
       name: "Имя партнера",
-      img: "client-15"
+      img: "messedusseldorflogo"
+    },
+    {
+      name: "Имя партнера",
+      img: "MesseFrankfurt"
+    },
+    {
+      name: "Имя партнера",
+      img: "messemuencheninternational"
+    },
+    {
+      name: "Имя партнера",
+      img: "PolyJinhanExhibition"
+    },
+    {
+      name: "Имя партнера",
+      img: "reed-exhibitions"
+    },
+    {
+      name: "Имя партнера",
+      img: "ReedSinopharmExhibitions"
+    },
+    {
+      name: "Имя партнера",
+      img: "ReedSinopharmExhibitions-1"
+    },
+    {
+      name: "Имя партнера",
+      img: "ShanghaiInternationalExhibition"
+    },
+    {
+      name: "Имя партнера",
+      img: "ShanghaiInternationalExhibitionCenterINTEX"
+    },
+    {
+      name: "Имя партнера",
+      img: "SinoExpo"
+    },
+    {
+      name: "Имя партнера",
+      img: "UBMSinoexpo"
+    },
+    {
+      name: "Имя партнера",
+      img: "VNU"
+    },
+    {
+      name: "Имя партнера",
+      img: "world-education-services-wes"
+    },
+    {
+      name: "Имя партнера",
+      img: "YASNInternationalExhibition"
+    },
+    {
+      name: "Имя партнера",
+      img: "ZhenweiExhibitionGroup"
+    },
+    {
+      name: "Имя партнера",
+      img: "zmexpologo"
     }
 ] %}
+
 
 <section class="clients-slider">
   {% set sectionHeader = {
@@ -74,14 +134,13 @@
         <div class="swiper-slide">
           <figure class="clients-slider__item">
             <picture class="clients-slider__image">
-              <source  type="image/webp" srcset="/dist/img/dummy/clients/{{item.img}}.webp"/>
-              <img src="/dist/img/dummy/clients/{{item.img}}.png" alt="{{item.name}}"/>
+              <source  type="image/webp" srcset="/dist/img/dummy/clients/{{item.img}}.webp, /dist/img/dummy/clients/{{item.img}}@2x.webp 2x"/>
+              <img srcset="/dist/img/dummy/clients/{{item.img}}.png, /dist/img/dummy/clients/{{item.img}}@2x.png 2x" src="/dist/img/dummy/clients/{{item.img}}.png" alt="{{item.name}}"/>
             </picture>
           </figure>
         </div>
       {% endfor %}
-    </div>
-    <!-- If we need pagination -->
+    </div> 
     <div class="swiper-pagination"></div>
   </div>
 </section>

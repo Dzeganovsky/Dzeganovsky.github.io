@@ -1216,23 +1216,13 @@ ul.promo-section__data {
   padding-left: 2.5rem;
 }
 
-.reviews-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.4rem;
-  align-items: start;
-}
-@media screen and (min-width: 910px) {
-  .reviews-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 .reviews-list__item {
   flex-grow: 1;
+  margin: 0 0.8rem 0.8rem;
   padding: 1.6rem 1.6rem 1.8rem;
   background-color: white;
   border-radius: 1.2rem;
-  box-shadow: 0px 0px 2px rgba(9, 30, 66, 0.15), 0px 3px 6px rgba(9, 30, 66, 0.15);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .reviews-list__logo {
   position: relative;
@@ -1249,23 +1239,30 @@ ul.promo-section__data {
 }
 .reviews-list__header {
   position: relative;
-  min-height: 4.2rem;
   margin-bottom: 1.9rem;
 }
 .reviews-list__name {
   font-size: 1.8rem;
-  font-weight: bold;
 }
 .reviews-list__organization {
   font-size: 1.4rem;
   color: var(--blue-60);
 }
 .reviews-list__text {
+  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 1.6rem;
+  min-height: 2rem;
+  padding-left: 3.4rem;
   font-size: 1.4rem;
   word-break: break-word;
+}
+.reviews-list__text::before {
+  content: url("/dist/img/quote.svg");
+  position: absolute;
+  left: 0.2rem;
+  top: 0;
 }
 
 .section-header {

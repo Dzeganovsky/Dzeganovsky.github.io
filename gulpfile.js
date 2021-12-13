@@ -7,6 +7,14 @@ const reload = browserSync.reload;
 const nunjucks = require('gulp-nunjucks');
 const avif = require('gulp-avif');
 const webp = require('gulp-webp');
+const clean = require('gulp-clean');
+ 
+function cleanDist() {
+    return gulp.src('./dist', {read: false})
+        .pipe(clean({
+          force: true
+        }));
+};
 
 function compileNjs() {
   return gulp.src('./templates/*.html')
@@ -19,6 +27,11 @@ function images() {
           .pipe(gulp.dest('./dist/img'))
           .pipe(webp())
           .pipe(gulp.dest('./dist/img'));
+}
+
+function copyJs() {
+  return gulp.src('./js/*.js')
+          .pipe(gulp.dest('./dist/js'));
 }
 
 function copySVG() {
@@ -55,5 +68,5 @@ function dev(done) {
 };
 
 exports.img = parallel(copySVG, images);
-exports.build = parallel(compileNjs, compileLess, copySVG, images);
-exports.serve = series(parallel(compileNjs, compileLess, copySVG, images), dev, watcher);
+exports.build = series(cleanDist,parallel(compileNjs, compileLess, copyJs, copySVG, images));
+exports.serve = series(cleanDist, parallel(compileNjs, compileLess, copyJs, copySVG, images), dev, watcher);

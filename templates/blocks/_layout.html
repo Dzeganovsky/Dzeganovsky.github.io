@@ -94,6 +94,34 @@
         });
       };
 
+
+      /* Код для каруселей отзывов */
+      if(document.querySelector('[data-section="clients-reviews"]')) {
+        const swiper = new Swiper('[data-section="clients-reviews"]', {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          loopAdditionalSlides: 1,
+          breakpoints: {
+            680: {
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+              loopAdditionalSlides: 2
+            },
+            1100: {
+              slidesPerView: 3,
+              slidesPerGroup: 3,
+              loopAdditionalSlides: 3
+            }
+          },
+          spaceBetween: 0,
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          }
+        });
+      };
+
       /* Код для мобильного меню */
       const mobileMenuButton = document.querySelector('[data-nemu-button]');
       mobileMenuButton.addEventListener('click', () => {

@@ -1,6 +1,46 @@
 {% set clients = [
     {
-      logo: "client-1",
+      logo: "CantonUniversal",
+      organizationName: "Canton Universal Fair Group Ltd.",
+      organizationLink: "www.chinaexhibition.com/Official_Site",
+      name: "Sharon Wang",
+      organization: "International Sales Representative",
+      text: "Искренне признательны за взаимовыгодное сотрудничество, своевременность, оперативность и ответственность. Выставка имела огромный успех."
+    },
+    {
+      logo: "GuangzhouYifanExhibitionService",
+      organizationName: "Guangzhou Yifan Exhibition Service Co., Ltd",
+      organizationLink: "www.djkz.org",
+      name: "IFE Committee",
+      organization: "",
+      text: "Спасибо за огромную помощь в запуске проекта. Без вашего усердия и трудолюбия, мы не смогли бы достичь таких великих результатов!"
+    },
+    {
+      logo: "HannoverMilano",
+      organizationName: "",
+      organizationLink: "",
+      name: "",
+      organization: "",
+      text: ""
+    },
+    {
+      logo: "MadeinChina",
+      organizationName: "",
+      organizationLink: "",
+      name: "",
+      organization: "",
+      text: ""
+    },
+    {
+      logo: "ReedSinopharmExhibitions",
+      organizationName: "Reed Sinopharm Exhibitions",
+      organizationLink: "www.reed-sinopharm.com",
+      name: "Minghao Wang",
+      organization: "International Sales Marketing",
+      text: "Сотрудничаем с компанией уже не первый год и выражаем благодарность за ваши услуги, профессионализм вашей команды и оперативность работы"
+    },
+    {
+      logo: "SinoExpo",
       organizationName: "",
       organizationLink: "",
       name: "",
@@ -14,36 +54,41 @@
     title: "Отзывы организаторов"
   } %}
   {% include "./_section-header.html" %}
-  
-  <div class="reviews-list">
-    {% for item in clients %}
-      <article class="reviews-list__item">
-        <picture class="reviews-list__logo">
-          <source type="image/webp" srcset="/dist/img/dummy/clients/{{item.logo}}.webp" />
-          <img srcset="/dist/img/dummy/clients/{{item.logo}}.png" src="/dist/img/dummy/clients/{{item.logo}}.png" alt="{{ item.organization }}" />
-        </picture>
-        <header class="reviews-list__header">
-          <h4 class="reviews-list__name">
-            {{ item.organizationName }}
-          </h4>
-          <div class="reviews-list__organization">
-            <a href="{{ item.organizationLink }}" target="_blank">{{ item.organizationLink }}</a>
-          </div>
-        </header>
-        <div class="reviews-list__header">
-          <p class="reviews-list__name">
-            {{ item.name }}
-          </p>
-          {% if item.organization %}
-            <p class="reviews-list__organization">
-              {{ item.organization }}
-            </p>
-          {% endif %}
+
+  <div class="reviews-list swiper" data-section="clients-reviews">
+    <div class="swiper-wrapper">
+      {% for item in clients %}
+        <div class="swiper-slide">
+          <article class="reviews-list__item">
+            <picture class="reviews-list__logo">
+              <source type="image/webp" srcset="/dist/img/dummy/feedbacks/{{item.logo}}.webp, /dist/img/dummy/feedbacks/{{item.logo}}@2x.webp 2x" />
+              <img srcset="/dist/img/dummy/feedbacks/{{item.logo}}.png, /dist/img/dummy/feedbacks/{{item.logo}}@2x.png 2x" src="/dist/img/feedbacks/clients/{{item.logo}}.png" alt="{{ item.organization }}" />
+            </picture>
+            <header class="reviews-list__header">
+              <h4 class="reviews-list__name">
+                {{ item.organizationName }}
+              </h4>
+              <div class="reviews-list__organization">
+                <a href="{{ item.organizationLink }}" target="_blank">{{ item.organizationLink }}</a>
+              </div>
+            </header>
+            <div class="reviews-list__header">
+              <p class="reviews-list__name">
+                {{ item.name }}
+              </p>
+              {% if item.organization %}
+                <p class="reviews-list__organization">
+                  {{ item.organization }}
+                </p>
+              {% endif %}
+            </div>
+            <div class="reviews-list__text">
+              {{ item.text | safe }}
+            </div>
+          </article>
         </div>
-        <div class="reviews-list__text">
-          {{ item.text | safe }}
-        </div>
-      </article>
-    {% endfor %}
+      {% endfor %}
+    </div> 
+    <div class="swiper-pagination"></div>
   </div>
 </section>
