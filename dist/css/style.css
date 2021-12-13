@@ -1258,7 +1258,7 @@ ul.promo-section__data {
 }
 .reviews-list__organization {
   font-size: 1.4rem;
-  color: var(--color-60);
+  color: var(--blue-60);
 }
 .reviews-list__text {
   display: flex;
