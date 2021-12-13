@@ -37,79 +37,81 @@
     <div class="main-layout">
       <div class="main-layout__header">
         <header class="main-header">
-  <a class="biletum-logo" href="/">
-    <img src="/dist/img/biletum-logo.svg" alt="">
-  </a>
-  <button class="menu-button" type="button" data-nemu-button>
-    <span class="menu-button__icon"></span>
-  </button>
+  <div class="main-header__wrapper">
+    <a class="biletum-logo" href="/">
+      <img src="/dist/img/biletum-logo.svg" alt="">
+    </a>
+    <button class="menu-button" type="button" data-nemu-button>
+      <span class="menu-button__icon"></span>
+    </button>
 
-  <section class="main-header__content">
-    <nav class="main-menu">
-      <ul class="main-menu__list">
-        <li class="main-menu__item">
-          <a class="main-menu__link" href="#">
-            Организаторам
-          </a>
-        </li>
-        <li class="main-menu__item">
-          <a class="main-menu__link" href="#">
-            Партнерам
-          </a>
-        </li>
-        <li class="main-menu__item">
-          <a class="main-menu__link" href="#">
-            Афиша Мероприятий
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <section class="main-header__content">
+      <nav class="main-menu">
+        <ul class="main-menu__list">
+          <li class="main-menu__item">
+            <a class="main-menu__link" href="#">
+              Организаторам
+            </a>
+          </li>
+          <li class="main-menu__item">
+            <a class="main-menu__link" href="#">
+              Партнерам
+            </a>
+          </li>
+          <li class="main-menu__item">
+            <a class="main-menu__link" href="#">
+              Афиша Мероприятий
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-    <div class="lang-switcher  dropmic" data-dropdown data-dropmic-direction="bottom-right">
-      <button data-dropmic-btn>
-        <span class="lang-switcher__item">
-          <img class="lang-switcher__icon" src="/dist/img/flags/ru.png" alt="ru" />
-          Рус
-        </span>
-      </button>
-      <ul class="dropmic-menu" aria-hidden="true">
-        <li class="dropmic-item">
-          <a class="dropmic-link" href="#">
-            <span class="lang-switcher__item">
-              <img class="lang-switcher__icon" src="/dist/img/flags/ua.png" alt="ua" />
-              Укр
-            </span>
-          </a>
-        </li>
-        <li class="dropmic-item">
-          <a class="dropmic-link" href="#">
-            <span class="lang-switcher__item">
-              <img class="lang-switcher__icon" src="/dist/img/flags/gb.png" alt="gb" />
-              Eng
-            </span>
-          </a>
-        </li>
-        <li class="dropmic-item">
-          <a class="dropmic-link" href="#">
-            <span class="lang-switcher__item">
-              <img class="lang-switcher__icon" src="/dist/img/flags/cn.png" alt="cn" />
-              Chi
-            </span>
-          </a>
-        </li>
-      </ul>
-    </div>
+      <div class="lang-switcher  dropmic" data-dropdown data-dropmic-direction="bottom-right">
+        <button data-dropmic-btn>
+          <span class="lang-switcher__item">
+            <img class="lang-switcher__icon" src="/dist/img/flags/ru.png" alt="ru" />
+            Рус
+          </span>
+        </button>
+        <ul class="dropmic-menu" aria-hidden="true">
+          <li class="dropmic-item">
+            <a class="dropmic-link" href="#">
+              <span class="lang-switcher__item">
+                <img class="lang-switcher__icon" src="/dist/img/flags/ua.png" alt="ua" />
+                Укр
+              </span>
+            </a>
+          </li>
+          <li class="dropmic-item">
+            <a class="dropmic-link" href="#">
+              <span class="lang-switcher__item">
+                <img class="lang-switcher__icon" src="/dist/img/flags/gb.png" alt="gb" />
+                Eng
+              </span>
+            </a>
+          </li>
+          <li class="dropmic-item">
+            <a class="dropmic-link" href="#">
+              <span class="lang-switcher__item">
+                <img class="lang-switcher__icon" src="/dist/img/flags/cn.png" alt="cn" />
+                Chi
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
 
-    <div class="buttons-group  buttons-group--end">
-      <a class="form-button  form-button--secondary" href="#">
-        Вход/Регистрация
-      </a>
-      <a class="form-button" href="#">
-        Создать мероприятие
-      </a>
-    </div>
-  </section>
+      <div class="buttons-group  buttons-group--end">
+        <button class="form-button  form-button--secondary" data-micromodal-trigger="modal-login">
+          Вход/Регистрация
+        </button>
+        <a class="form-button" href="/dist/registration.html">
+          Создать мероприятие
+        </a>
+      </div>
+    </section>
+  </div>
 </header>
 
       </div>
@@ -819,10 +821,10 @@
   </section>
   <div class="main-footer__actions">
     <section class="buttons-group">
-      <a class="form-button  form-button--secondary-dark" href="#">
+      <button class="form-button  form-button--secondary-dark" data-micromodal-trigger="modal-confirmed">
         Вход/Регистрация
-      </a>
-      <a class="form-button  form-button--dark" href="#">
+      </button>
+      <a class="form-button  form-button--dark" href="/dist/registration.html">
         Создать мероприятие
       </a>
     </section>
@@ -908,6 +910,106 @@
   <a href="/dist/page4.html">Organization - 3</a>
   <a href="/dist/page5.html">Organization - 4</a>
   <a href="/dist/page6.html">About Us</a>
+  <a href="/dist/registration.html">Registration</a>
+</div>
+
+    
+    <div class="modal micromodal-slide" id="modal-login" aria-hidden="true">
+  <div class="modal__overlay" tabindex="-1" data-micromodal-close="data-micromodal-close">
+    <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-login-title">
+      <header class="modal__header">
+        <h2 class="modal__title" id="modal-login-title">
+          Вход в аккаунт
+        </h2>
+        <button class="modal__close" aria-label="Close modal" data-micromodal-close="data-micromodal-close"></button>
+      </header>
+      <div class="modal__content" id="modal-login-content">
+        <form class="form-wrapper" action="" method="post">
+          <div class="form-row">
+            <p>Нет аккаунта? <a href="/dist/registration.html">Зарегистрируйтесь</a></p>
+          </div>
+          <div class="form-row max-width-80-per">
+            <div class="form-unit">
+              <label class="form-unit__label" for="user-email">E-mail</label>
+              <input class="form-unit__input" type="email" name="user-email" id="user-email" value="" placeholder="Hint Text" inputmode="email" autocomplete="email">
+              <p class="form-unit__error">Error message</p>
+            </div>
+          </div>
+          <div class="form-row max-width-55-per">
+            <div class="form-unit">
+              <label class="form-unit__label" for="user-password">Пароль</label>
+              <input class="form-unit__input" type="password" name="user-password" id="user-password" value="" placeholder="Hint Text" autocomplete="current-password">
+              <p class="form-unit__error">Error message</p>
+              <p class="form-unit__help">
+                <a href="#">
+                  <img src="/dist/img/hint-question.svg" alt="" />
+                  Забыли пароль?
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="form-row  form-row--end">
+            <button class="form-button" type="submit">
+              Войти
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="modal micromodal-slide" id="modal-thank" aria-hidden="true">
+  <div class="modal__overlay" tabindex="-1" data-micromodal-close="data-micromodal-close">
+    <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-thank-title">
+      <header class="modal__header">
+        <h2 class="modal__title" id="modal-thank-title">
+          Регистрация
+        </h2>
+        <button class="modal__close" aria-label="Close modal" data-micromodal-close="data-micromodal-close"></button>
+      </header>
+      <div class="modal__content" id="modal-thank-content">
+        <section class="modal-info">
+          <h4 class="modal-info__title">
+            Ваш аккаунт подтвержден!
+          </h4>
+          <div class="modal-info__content">
+            Вы можете заполнить детальную инфо в личном кабинете
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="modal micromodal-slide" id="modal-confirmed" aria-hidden="true">
+  <div class="modal__overlay" tabindex="-1" data-micromodal-close="data-micromodal-close">
+    <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-confirmed-title">
+      <header class="modal__header">
+        <h2 class="modal__title" id="modal-confirmed-title">
+          Регистрация
+        </h2>
+        <button class="modal__close" aria-label="Close modal" data-micromodal-close="data-micromodal-close"></button>
+      </header>
+      <div class="modal__content" id="modal-confirmed-content">
+        <section class="modal-info">
+          <img class="modal-info__icon" src="/dist/img/check-confirmed.svg" alt="" />
+          <h4 class="modal-info__title">
+            Ваш аккаунт подтвержден!
+          </h4>
+          <div class="modal-info__content">
+            Вы можете заполнить детальную инфо в личном кабинете
+          </div>
+          <div class="modal-info__buttons">
+            <a class="form-button  form-button--secondary" href="#">
+              В кабинет
+            </a>
+            <a class="form-button" href="#">
+              К сервисам
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
 </div>
 
     
@@ -988,6 +1090,11 @@
       const mobileMenuButton = document.querySelector('[data-nemu-button]');
       mobileMenuButton.addEventListener('click', () => {
         document.querySelector('body').classList.toggle("mobileMenuActive");
+      });
+
+      /* Код для модалок */
+      MicroModal.init({
+        disableScroll: true,
       });
     </script>
   </body>

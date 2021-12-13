@@ -75,4 +75,26 @@
       color: var(--blue-60);
     }
   }
+
+  &--inline-link {
+    min-height: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    font-size: inherit;
+    font-weight: 600;
+    color: var(--cyan-100);
+
+    &:hover {
+      background-color: transparent;
+      text-decoration: underline;
+      color: var(--cyan-100);
+    }
+  
+    &:disabled {
+      background-color: transparent;
+      color: var(--blue-60);
+    }
+  }
 }

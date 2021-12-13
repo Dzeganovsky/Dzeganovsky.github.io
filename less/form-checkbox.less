@@ -45,4 +45,35 @@
     display: block;
     font-size: 1.4rem;
   }
+
+  &--button &__text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.2rem;
+    margin: 0;
+    padding: 0.5rem 3.2rem;
+    border: none;
+    border-radius: 1.2rem;
+    background-color: var(--blue-10);
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 1.4rem;
+    line-height: 1.25;
+    font-weight: 600;
+    color: var(--cyan-100);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.24s ease;
+
+    &:hover {
+      background-color: var(--mint-10);
+      color: var(--mint-100);
+      text-decoration: none;
+    }
+  }
+  &--button &__input:checked + &__text {
+    background-color: var(--blue-80);
+    color: white;
+  }
 }

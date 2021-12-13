@@ -1,75 +1,77 @@
 <header class="main-header">
-  <a class="biletum-logo" href="/">
-    <img src="/dist/img/biletum-logo.svg" alt="">
-  </a>
-  <button class="menu-button" type="button" data-nemu-button>
-    <span class="menu-button__icon"></span>
-  </button>
+  <div class="main-header__wrapper">
+    <a class="biletum-logo" href="/">
+      <img src="/dist/img/biletum-logo.svg" alt="">
+    </a>
+    <button class="menu-button" type="button" data-nemu-button>
+      <span class="menu-button__icon"></span>
+    </button>
 
-  <section class="main-header__content">
-    <nav class="main-menu">
-      <ul class="main-menu__list">
-        <li class="main-menu__item">
-          <a class="main-menu__link" href="#">
-            Организаторам
-          </a>
-        </li>
-        <li class="main-menu__item">
-          <a class="main-menu__link" href="#">
-            Партнерам
-          </a>
-        </li>
-        <li class="main-menu__item">
-          <a class="main-menu__link" href="#">
-            Афиша Мероприятий
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <section class="main-header__content">
+      <nav class="main-menu">
+        <ul class="main-menu__list">
+          <li class="main-menu__item">
+            <a class="main-menu__link" href="#">
+              Организаторам
+            </a>
+          </li>
+          <li class="main-menu__item">
+            <a class="main-menu__link" href="#">
+              Партнерам
+            </a>
+          </li>
+          <li class="main-menu__item">
+            <a class="main-menu__link" href="#">
+              Афиша Мероприятий
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-    <div class="lang-switcher  dropmic" data-dropdown data-dropmic-direction="bottom-right">
-      <button data-dropmic-btn>
-        <span class="lang-switcher__item">
-          <img class="lang-switcher__icon" src="/dist/img/flags/ru.png" alt="ru" />
-          Рус
-        </span>
-      </button>
-      <ul class="dropmic-menu" aria-hidden="true">
-        <li class="dropmic-item">
-          <a class="dropmic-link" href="#">
-            <span class="lang-switcher__item">
-              <img class="lang-switcher__icon" src="/dist/img/flags/ua.png" alt="ua" />
-              Укр
-            </span>
-          </a>
-        </li>
-        <li class="dropmic-item">
-          <a class="dropmic-link" href="#">
-            <span class="lang-switcher__item">
-              <img class="lang-switcher__icon" src="/dist/img/flags/gb.png" alt="gb" />
-              Eng
-            </span>
-          </a>
-        </li>
-        <li class="dropmic-item">
-          <a class="dropmic-link" href="#">
-            <span class="lang-switcher__item">
-              <img class="lang-switcher__icon" src="/dist/img/flags/cn.png" alt="cn" />
-              Chi
-            </span>
-          </a>
-        </li>
-      </ul>
-    </div>
+      <div class="lang-switcher  dropmic" data-dropdown data-dropmic-direction="bottom-right">
+        <button data-dropmic-btn>
+          <span class="lang-switcher__item">
+            <img class="lang-switcher__icon" src="/dist/img/flags/ru.png" alt="ru" />
+            Рус
+          </span>
+        </button>
+        <ul class="dropmic-menu" aria-hidden="true">
+          <li class="dropmic-item">
+            <a class="dropmic-link" href="#">
+              <span class="lang-switcher__item">
+                <img class="lang-switcher__icon" src="/dist/img/flags/ua.png" alt="ua" />
+                Укр
+              </span>
+            </a>
+          </li>
+          <li class="dropmic-item">
+            <a class="dropmic-link" href="#">
+              <span class="lang-switcher__item">
+                <img class="lang-switcher__icon" src="/dist/img/flags/gb.png" alt="gb" />
+                Eng
+              </span>
+            </a>
+          </li>
+          <li class="dropmic-item">
+            <a class="dropmic-link" href="#">
+              <span class="lang-switcher__item">
+                <img class="lang-switcher__icon" src="/dist/img/flags/cn.png" alt="cn" />
+                Chi
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
 
-    <div class="buttons-group  buttons-group--end">
-      <a class="form-button  form-button--secondary" href="#">
-        Вход/Регистрация
-      </a>
-      <a class="form-button" href="#">
-        Создать мероприятие
-      </a>
-    </div>
-  </section>
+      <div class="buttons-group  buttons-group--end">
+        <button class="form-button  form-button--secondary" data-micromodal-trigger="modal-login">
+          Вход/Регистрация
+        </button>
+        <a class="form-button" href="/dist/registration.html">
+          Создать мероприятие
+        </a>
+      </div>
+    </section>
+  </div>
 </header>

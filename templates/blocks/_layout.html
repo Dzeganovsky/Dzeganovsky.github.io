@@ -49,6 +49,11 @@
 
     {% include "./____tech-menu.html" %}
 
+    
+    {% include "./_modal-login.html" %}
+    {% include "./_modal-reg-thankyou.html" %}
+    {% include "./_modal-reg-confirmed.html" %}
+
     {% block jsPerPage %}{% endblock %}
     <script>
       /* Код для дропдаунов */
@@ -127,6 +132,11 @@
       const mobileMenuButton = document.querySelector('[data-nemu-button]');
       mobileMenuButton.addEventListener('click', () => {
         document.querySelector('body').classList.toggle("mobileMenuActive");
+      });
+
+      /* Код для модалок */
+      MicroModal.init({
+        disableScroll: true,
       });
     </script>
   </body>
