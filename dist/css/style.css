@@ -2168,6 +2168,8 @@ button.swiper-pagination-bullet {
   display: flex;
   flex-direction: column;
   row-gap: 1.8rem;
+  width: 100%;
+  word-wrap: break-word;
 }
 
 :root {
