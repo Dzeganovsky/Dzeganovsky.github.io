@@ -11,13 +11,15 @@
   }
 
   &__list {
-    display: grid;
-    grid-template-columns: 1fr;
-    column-gap: 7rem;
+    display: flex;
+    flex-direction: column;
     row-gap: 5rem;
 
     @media screen and (min-width: 900px) {
+      display: grid;
       grid-template-columns: repeat(2, 1fr);
+      column-gap: 7rem;
+      row-gap: 5rem;
     }
   }
 }
