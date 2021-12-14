@@ -51,6 +51,7 @@ function watcher(done) {
   watch(["./templates/**/*.html"], parallel(compileNjs));
   watch(["./img/**/*.png"], parallel(images));
   watch(["./img/**/*.svg"], parallel(copySVG));
+  watch(["./js/**/*.js"], parallel(copyJs));
 
   done();
 }

@@ -3,34 +3,49 @@
   padding: 0;
 
   @media screen and (min-width: 1380px) {
-    align-self: center;
     margin-left: 2.8rem;
   }
 
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 3.6rem;
     list-style-type: none;
     margin: 0;
     padding: 0;
 
     @media screen and (min-width: 1380px) {
       flex-direction: row;
-      align-items: center;
+      align-items: stretch;
+      height: 100%;
     }
   }
 
   &__item {
-    display: block;
+    display: flex;
+    align-items: stretch;
   }
 
   &__link {
-    display: block;
+    display: flex;
+    align-items: center;
+    padding: 1.4rem 0;
     font-size: 1.6rem;
     text-decoration: none;
     font-weight: 600;
     color: var(--cyan-100);
     white-space: nowrap;
+    transition: background-color 0.24s ease, color 0.24s ease;
+
+    @media screen and (min-width: 1380px) {
+      padding: 0.5rem 1.8rem;
+    }
+
+    &:hover {
+      @media screen and (min-width: 1380px) {
+        background-color: var(--cyan-10);
+        color: var(--cyan-80);
+        text-decoration: none;
+      }
+    }
   }
 }

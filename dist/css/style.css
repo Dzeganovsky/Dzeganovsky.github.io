@@ -59,9 +59,14 @@
   }
 }
 .about-us__infographics {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
+}
+@media screen and (min-width: 600px) {
+  .about-us__infographics {
+    display: flex;
+  }
 }
 .about-us__header {
   display: flex;
@@ -69,9 +74,22 @@
   align-items: center;
   text-align: center;
 }
+.about-us__image {
+  display: flex;
+  justify-content: center;
+}
+.about-us__image > img {
+  max-width: 100%;
+}
 .about-us__logo {
+  display: none;
   max-width: 24rem;
   margin-bottom: 2.4rem;
+}
+@media screen and (min-width: 600px) {
+  .about-us__logo {
+    display: block;
+  }
 }
 .about-us__title {
   margin-bottom: 0.8rem;
@@ -267,7 +285,12 @@ h1 {
   font-size: 4.8rem;
 }
 h2 {
-  font-size: 3.6rem;
+  font-size: 2.4rem;
+}
+@media screen and (min-width: 850px) {
+  h2 {
+    font-size: 3.6rem;
+  }
 }
 h3 {
   font-size: 2.4rem;
@@ -294,7 +317,7 @@ submit {
   align-items: center;
   column-gap: 1.1rem;
   height: 100%;
-  padding: 0.5rem 6.5rem 0.5rem 1.6rem;
+  padding: 0.5rem 2.4rem 0.5rem 1.6rem;
   background: white;
   border: none;
   border-radius: 0;
@@ -306,13 +329,20 @@ submit {
 }
 [data-dropmic-btn]::after {
   content: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.75 0.75L5 5.25L9.25 0.75' stroke='%230091D9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  transform: translateY(-1px);
+}
+@media screen and (min-width: 1380px) {
+  [data-dropmic-btn]:hover {
+    background-color: var(--cyan-10);
+    color: var(--cyan-80);
+  }
 }
 .dropmic--show [data-dropmic-btn] {
   box-shadow: 0px 0px 2px rgba(9, 30, 66, 0.15), 0px 3px 6px rgba(9, 30, 66, 0.15);
-  color: var(--blue-100);
+  color: var(--mint-100);
 }
 .dropmic--show [data-dropmic-btn]::after {
-  content: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.25 5.25L5 0.75L0.75 5.25' stroke='%23053147' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  content: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.25 5.25L5 0.75L0.75 5.25' stroke='%2343CDD1' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 }
 .dropmic-menu {
   display: none;
@@ -325,6 +355,7 @@ submit {
   list-style-type: none;
   background-color: white;
   box-shadow: 0px 2px 2px rgba(9, 30, 66, 0.15), 0px 6px 6px rgba(9, 30, 66, 0.15);
+  font-size: 1.6rem;
 }
 .dropmic--show .dropmic-menu {
   display: block;
@@ -339,11 +370,35 @@ submit {
   text-decoration: none;
   color: var(--cyan-100);
 }
-.dropmic-link:hover,
-.dropmic-link:active {
-  text-decoration: none;
-  background-color: var(--mint-10);
-  color: var(--mint-100);
+@media screen and (min-width: 1380px) {
+  .dropmic-link:hover,
+  .dropmic-link:active {
+    text-decoration: none;
+    background-color: var(--mint-10);
+    color: var(--mint-100);
+  }
+}
+@media screen and (max-width: 1379px) {
+  [data-dropmic-btn] {
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+    padding-left: 0;
+  }
+  .dropmic-menu,
+  .dropmic--show [data-dropmic-btn] {
+    position: static;
+    box-shadow: none;
+  }
+}
+@media screen and (min-width: 1380px) {
+  [data-dropmic-btn] {
+    transition: background-color 0.24s ease, color 0.24s ease;
+  }
+  [data-dropmic-btn]:hover {
+    background-color: var(--cyan-10);
+    color: var(--cyan-80);
+    text-decoration: none;
+  }
 }
 
 .event-slider {
@@ -752,17 +807,6 @@ submit {
 .lang-switcher__icon {
   width: 1.4rem;
 }
-@media screen and (max-width: 1370px) {
-  .lang-switcher [data-dropmic-btn] {
-    padding-top: 1.4rem;
-    padding-bottom: 1.4rem;
-    padding-left: 0;
-  }
-  .lang-switcher .dropmic-menu,
-  .lang-switcher.dropmic--show [data-dropmic-btn] {
-    box-shadow: none;
-  }
-}
 
 .main-footer {
   width: 100%;
@@ -864,7 +908,6 @@ submit {
   z-index: 77777;
   display: grid;
   grid-template-rows: min-content min-content auto;
-  row-gap: 3.6rem;
   padding: 1.6rem;
   background-color: white;
   transform: translateX(-100%);
@@ -930,14 +973,12 @@ submit {
 }
 @media screen and (min-width: 1380px) {
   .main-menu {
-    align-self: center;
     margin-left: 2.8rem;
   }
 }
 .main-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 3.6rem;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -945,19 +986,36 @@ submit {
 @media screen and (min-width: 1380px) {
   .main-menu__list {
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
+    height: 100%;
   }
 }
 .main-menu__item {
-  display: block;
+  display: flex;
+  align-items: stretch;
 }
 .main-menu__link {
-  display: block;
+  display: flex;
+  align-items: center;
+  padding: 1.4rem 0;
   font-size: 1.6rem;
   text-decoration: none;
   font-weight: 600;
   color: var(--cyan-100);
   white-space: nowrap;
+  transition: background-color 0.24s ease, color 0.24s ease;
+}
+@media screen and (min-width: 1380px) {
+  .main-menu__link {
+    padding: 0.5rem 1.8rem;
+  }
+}
+@media screen and (min-width: 1380px) {
+  .main-menu__link:hover {
+    background-color: var(--cyan-10);
+    color: var(--cyan-80);
+    text-decoration: none;
+  }
 }
 
 @media screen and (min-width: 460px) {
@@ -1841,11 +1899,13 @@ button.swiper-pagination-bullet {
 .team-leader {
   display: flex;
   flex-direction: column;
+  align-items: center;
   row-gap: 1.6rem;
 }
 @media screen and (min-width: 600px) {
   .team-leader {
     flex-direction: row;
+    align-items: flex-start;
     column-gap: 2.4rem;
     row-gap: 0;
   }
@@ -1863,6 +1923,14 @@ button.swiper-pagination-bullet {
   display: block;
   max-width: 100%;
 }
+.team-leader__header {
+  text-align: center;
+}
+@media screen and (min-width: 600px) {
+  .team-leader__header {
+    text-align: left;
+  }
+}
 .team-leader__content {
   flex-grow: 1;
   display: flex;
@@ -1875,9 +1943,15 @@ button.swiper-pagination-bullet {
 .team-leader__link {
   display: flex;
   align-items: center;
+  justify-content: center;
   column-gap: 0.8rem;
   font-size: 1.4rem;
   font-weight: 600;
+}
+@media screen and (min-width: 600px) {
+  .team-leader__link {
+    justify-content: flex-start;
+  }
 }
 
 .tile-card {

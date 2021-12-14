@@ -31,7 +31,7 @@
 
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
-    <script src="/dist/js/dropmic.min.js"></script>
+    <script src="/dist/js/dropdown.js"></script>
   </head>
   <body>
     <div class="main-layout">
@@ -59,9 +59,28 @@
             </a>
           </li>
           <li class="main-menu__item">
-            <a class="main-menu__link" href="#">
-              Афиша Мероприятий
-            </a>
+            <div class="dropmic" data-dropdown data-dropmic-direction="bottom-right">
+              <button data-dropmic-btn>
+                Родительский
+              </button>
+              <ul class="dropmic-menu" aria-hidden="true">
+                <li class="dropmic-item">
+                  <a class="dropmic-link" href="#">
+                    Дочерний 1
+                  </a>
+                </li>
+                <li class="dropmic-item">
+                  <a class="dropmic-link" href="#">
+                    Дочерний 2
+                  </a>
+                </li>
+                <li class="dropmic-item">
+                  <a class="dropmic-link" href="#">
+                    Дочерний 3
+                  </a>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
       </nav>
@@ -441,35 +460,31 @@
     
     <script>
       /* Код для дропдаунов */
-      if(document.querySelector('[data-dropdown]')) {
-        const dropmic = new Dropmic(document.querySelector('[data-dropdown]'));
-      }
+      BiletumDropdown.init();
 
       /* Код для каруселей партнеров */
       if(document.querySelector('[data-section="our-clients"]')) {
         const swiper = new Swiper('[data-section="our-clients"]', {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          loopAdditionalSlides: 2,
           breakpoints: {
-            230: {
-              slidesPerView: 2,
-              slidesPerGroup: 2,
-              loopAdditionalSlides: 2
-            },
-            660: {
+            430: {
               slidesPerView: 3,
               slidesPerGroup: 3,
               loopAdditionalSlides: 3
             },
-            890: {
+            550: {
               slidesPerView: 4,
               slidesPerGroup: 4,
               loopAdditionalSlides: 4
             },
-            1110: {
+            740: {
               slidesPerView: 5,
               slidesPerGroup: 5,
               loopAdditionalSlides: 5
             },
-            1340: {
+            980: {
               slidesPerView: 6,
               slidesPerGroup: 6,
               loopAdditionalSlides: 6
