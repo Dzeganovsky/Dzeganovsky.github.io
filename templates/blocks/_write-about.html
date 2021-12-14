@@ -1,0 +1,47 @@
+<section class="write-about">
+  <div class="write-about__wrapper">
+    {% set sectionHeader = {
+      title: "О нас пишут",
+      description: "Тут какой-то текст"
+    } %}
+    {% include "./_section-header.html" %}
+
+    {% set articles = [
+      {
+        title: "Exhibition World",
+        text: "
+          <p>ExpoPromoter, an online service for ticket and Expo booth distribution at exhibitions in China, has reported an injection of US$1m in investment from its shareholders, with the aim of increasing market share and raising profits by 200% in 2019.</p>
+        ",
+        image: "write-about1",
+        link: "www.exhibitionworld.co.uk/2019/04/08/expopromoter-secures-new-1m-round-of-investment-for-big-push-in-china/"
+      },
+      {
+        title: "Forbes China",
+        text: "
+          <p>乌克兰创业公司ExpoPromoter的中国之旅<br/>ExpoPromoter是一家成立于2011年的乌克兰创业公司，旨在帮助展会的主办方吸引了来自世界各地的专业观众和参展商。作为它的创始人兼全球CEO的Hennandiy Netyaha是一个出生于乌克兰的创业者。2015年他决定将ExpoPromoter带来中国，从此开始在中国展会市场开疆辟土的征途。</p>
+        ",
+        image: "write-about2",
+        link: "www.forbeschina.com/review/201803/0066550.shtml"
+      }
+    ]%}
+    <div class="write-about__list">
+      {% for item in articles %}
+        <article class="write-item">
+          <picture class="write-item__image">
+            <source  type="image/webp" srcset="/dist/img/dummy/{{ item.image }}.webp, /dist/img/dummy/{{ item.image }}@2x.webp 2x"/>
+            <img srcset="/dist/img/dummy/{{ item.image }}.png, /dist/img/dummy/{{ item.image }}@2x.png 2x" src="/dist/img/dummy/{{ item.image }}.png" alt="{{item.name}}"/>
+          </picture>
+          <h3 class="write-item__title">
+            {{ item.title }}
+          </h3>
+          <div class="write-item__text">
+            {{ item.text | safe }}
+            <p>
+              Read more: <a href="{{ item.link }}" target="_blank">{{ item.link }}</a>
+            </p>
+          </div>
+        </article>
+       {% endfor %}
+    </div>
+  </div>
+</section>

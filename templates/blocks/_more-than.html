@@ -1,0 +1,57 @@
+<section class="more-than">
+  <div class="more-than__wrapper">
+    {% set sectionHeader = {
+      title: "Более 50 экспертов в команде",
+      description: "Мы собрали лучших экспертов в каждой отрасли, чтобы обеспечить наилучший сервис для каждого направления и предоставить качественный опыт нашим клиентам.<br/>Команду возглавляют специалисты с мировым именем и многолетним опытом в индустрии, такие как:"
+    } %}
+    {% include "./_section-header.html" %}
+
+    {% set articles = [
+      {
+        name: "Hennadiy Netyaha",
+        position: "Chief Executive Officer (Europe, Asia)",
+        text: "
+          <p>Основатель TicketForEvent, ExpoPromoter, EventsWallet и Biletum. Эксперт в области выставочной и ивент-индустрии.</p>
+        ",
+        image: "team-leader1",
+        lnLink: "https://www.linkedin.com/"
+      },
+      {
+        name: "Семен Зайганов",
+        position: "Chief Operating Officer (Asia)",
+        text: "
+          <p>Вошел в ТОП-30 по версии Forbes China среди самых перспективных молодых предпринимателей в 2018 году.</p>
+        ",
+        image: "team-leader2",
+        lnLink: "https://www.linkedin.com/"
+      }
+    ]%}
+    <div class="more-than__list">
+      {% for item in articles %}
+        <article class="team-leader">
+          <picture class="team-leader__photo">
+            <source  type="image/webp" srcset="/dist/img/dummy/{{ item.image }}.webp, /dist/img/dummy/{{ item.image }}@2x.webp 2x"/>
+            <img srcset="/dist/img/dummy/{{ item.image }}.png, /dist/img/dummy/{{ item.image }}@2x.png 2x" src="/dist/img/dummy/{{ item.image }}.png" alt="{{item.name}}"/>
+          </picture>
+          <div class="team-leader__content">
+            <header class="team-leader__header">
+              <h3 class="team-leader__name">
+                {{ item.name }}
+              </h3>
+              <p class="team-leader__position">
+                {{ item.position }}
+              </p>
+            </header>
+            <div class="team-leader__text">
+              {{ item.text | safe }}
+            </div>
+            <a class="team-leader__link" href="{{ item.link }}" target="_blank">
+              <img src="/dist/img/social-icons/ln-link.svg" />
+              Linkedin
+            </a>
+          </div>
+        </article>
+       {% endfor %}
+    </div>
+  </div>
+</section>

@@ -10,35 +10,34 @@
   {% include "./blocks/_about-us.html" %}
 
   {% set promos = [
-        {
-          title: "Более 20 стран",
-          text: "Единый билетный оператор в Евразии, ориентированный на деловые мероприятия, включая выставки, форумы, конференции и т. Д.",
-          image: "content-20",
-          isLight: true,
-          isReverse: true
-        },
-        {
-          title: "Более 50 экспертов в команде",
-          text: "Мы объединили больше 50 профессиональных специалистов из разных стран.<br />Каждый из них отвечает за успешное ведение своего направления, а в по итогу - за результат вашего опыта с Biletum.",
-          image: "content-20",
-          isLight: true,
-          isReverse: true
-        }
-    ] %}
-    {% for promo in promos %}
-      {% set promoData = promo %}
-      {% include "./blocks/_promo-section.html" %}
-    {% endfor %}
+      {
+        title: "Более 20 стран",
+        text: "Единый билетный оператор в Евразии, ориентированный на деловые мероприятия, включая выставки, форумы и конференции.<br/>Biletum объединяет аудиторию крупнейших мероприятий, включая Китай и Восточную Европу.",
+        image: "content-20",
+        isLight: true,
+        isReverse: true
+      }
+  ] %}
+  {% for promo in promos %}
+    {% set promoData = promo %}
+    {% include "./blocks/_promo-section.html" %}
+  {% endfor %}
+
+  {% include "./blocks/_more-than.html" %}
 
   {% set clientSlider = {
-    title: "Организаторы",
-    description: "У нас есть не только опыт в закрытии технических вопросов организации мероприятий, но и заслуженное имя на мировом уровне. Мы больше десяти лет оттачивали практику, благодаря свыше 10 000 клиентов и 500 000 проведенных ивентов. Организаторы возвращаются и выбирают нас снова, для своих текущих и будущих проектов."
+    title: "30 562 организаторов уже пользуются Biletum"
   } %}
   {% include "./blocks/_clients-slider.html" %}
 
+  {% include "./blocks/_clients-reviews.html" %}
+
   {% set clientSlider = {
-    title: "Партнеры",
-    description: "Мы развили наше коммьюнити до 12 800 партнеров в сети; с нами 86 стран. Партнеры привлекают целевую аудиторию соответствующую бизнес-потребностям организаторов. Что мы имеем? Организаторы получают большее число посетителей, а партнеры доход за “качественного” посетителя."
+    title: "12 802 партнеров обеспечивают продажу билетов по всему миру."
   } %}
-  {% include "./blocks/_clients-slider.html" %}
+  {% include "./blocks/_partner-slider.html" %}
+
+  {% include "./blocks/_write-about.html" %}
+
+  {% include "./blocks/_our-offices.html" %}
 {% endblock %}

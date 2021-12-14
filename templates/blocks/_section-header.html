@@ -13,7 +13,7 @@
   </div>
   {% if sectionHeader.description %}
     <p class="section-header__description">
-      {{ sectionHeader.description }}
+      {{ sectionHeader.description | safe }}
     </p>
   {% endif %}
 </header>

@@ -1,0 +1,32 @@
+.office-item {
+  display: flex;
+  flex-direction: column;
+  max-width: 32rem;
+
+  &__name {
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: solid 2px var(--blue-30);
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+
+  &__address {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.8rem;
+    font-size: 10px;
+  }
+
+  &__map {
+    display: block;
+    width: 100%;
+    margin-top: 2.4rem;
+
+    > img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+}

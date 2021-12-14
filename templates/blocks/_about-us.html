@@ -3,22 +3,139 @@
     <source  type="image/webp" srcset="/dist/img/dummy/about.webp, /dist/img/dummy/about@2x.webp 2x"/>
     <img srcset="/dist/img/dummy/about.png, /dist/img/dummy/about@2x.png 2x" src="/dist/img/dummy/about.png" alt=""/>
   </picture>
-  <div class="about-us__content">
-    <article class="about-us__item">
-      <h3 class="about-us__title">
-        ExpoPromoter
-      </h3>
-      <p class="about-us__text">
-        Service for distribution of tickets and expo-booths for the trade shows. Active market: China.
-      </p>
-    </article>
-    <article class="about-us__item">
-      <h3 class="about-us__title">
-        TicketForEvent
-      </h3>
-      <p class="about-us__text">
-        Platform for online registration service build-up and ticket sales for business events. Active markets: Russia, Ukraine, Europe.
-      </p>
-    </article>
+  <div class="about-us__infographics">
+    {% set aboutItems = [
+      {
+        year: "2009",
+        left: {
+          image: "",
+          title: "",
+          text: ""
+        },
+        right: {
+          image: "about1",
+          title: "Запуск ExpoPromoter",
+          text: "Первая на рынке платформа для дистрибюции билетов он-лайн в выставочной индустрии "
+        }
+      },
+      {
+        year: "2010",
+        left: {
+          image: "",
+          title: "",
+          text: ""
+          
+        },
+        right: {
+          image: "",
+          title: "$ 1,000,000 ",
+          text: "Привлечение первого раунда инвестиций"
+        }
+      },
+      {
+        year: "2011",
+        left: {
+          image: "about2",
+          title: "Запуск TicketForEvent",
+          text: "SaaS-решение для единого управления всеми каналами продажи билетов"
+        },
+        right: {
+          image: "about3",
+          title: "",
+          text: "Эксклюзивный дистрибьютор<br/>Fiera Milano"
+        }
+      },
+      {
+        year: "2012",
+        left: {
+          image: "",
+          title: "$ 3,000,000 ",
+          text: "Привлечение первого раунда  инвестиций"
+        },
+        right: {
+          image: "about4",
+          title: "",
+          text: "Вошли в ТОП-100 стартапов года<br/>по версии Red Herring "
+        }
+      },
+      {
+        year: "2013",
+        left: {
+          image: "about5",
+          title: "",
+          text: "Лучший стартап года по версии The Next Web"
+        },
+        right: {
+          image: "",
+          title: "",
+          text: ""
+        }
+      },
+      {
+        year: "2015",
+        left: {
+          image: "about6",
+          title: "",
+          text: "Заняли 6-е место в Топ-50 стартапов<br/>года согласно рейтингу «Коммерсантъ»"
+        },
+        right: {
+          image: "",
+          title: "$ 2,500,000 в Китае",
+          text: "Запуск на рынке Китая и<br/>привлечение $2,5 млн инвестиций"
+        }
+      },
+      {
+        year: "2017",
+        left: {
+          image: "",
+          title: "Выход на новый рынок",
+          text: "Выход проекта на рынки Турции и<br/>Ближнего Востока"
+        },
+        right: {
+          image: "about7",
+          title: "",
+          text: "Внеконкурсный участник программы Chinaccelerator (SOSV)"
+        }
+      },
+      {
+        year: "2019",
+        left: {
+          image: "",
+          title: "Более 25 тыс клиентов и<br/>$ 34,000,000 ",
+          text: "$34 млн. оборота по продаже билетов и<br/>26 958 клиентов"
+        },
+        right: {
+          image: "",
+          title: "Более 250 тыс байеров и<br/>820 выставок в Китае ",
+          text: "256 868 привлеченных байеров на 820 крупнейших выставок Китая"
+        }
+      },
+      {
+        year: "2021",
+        left: {
+          image: "",
+          title: "",
+          text: ""
+        },
+        right: {
+          image: "",
+          title: "",
+          text: ""
+        }
+      }
+    ]%}
+
+    {% for aboutItem in aboutItems %}
+      {% include "./_about-item.html" %}
+    {% endfor %}
   </div>
+  <header class="about-us__header">
+    <img class="about-us__logo" src="/dist/img/biletum-logo.svg" alt="Biletum logo" />
+    <h3 class="about-us__title">
+      Создание единой системы Biletum
+    </h3>
+    <p class="about-us__description">
+      В 2021 мы создали единую экосистему приложений для создания, продвижения и проведения мероприятий любого формата - от тематических семинаров и бизнес-конференций до выставок мирового масштаба. 
+    </p>
+  </header>
 </section>

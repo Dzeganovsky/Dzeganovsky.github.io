@@ -1,0 +1,52 @@
+.about-item {
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+  column-gap: 6rem;
+
+  &__year {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 2.8rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--blue-80);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      top: 4rem;
+      border-right: dashed 2px var(--blue-80);
+      transform: translateX(-50%);
+    }
+  }
+
+  &:last-child &__year::before {
+    display: none;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2.8rem;
+    row-gap: 0.8rem;
+    padding-top: 1rem;
+
+    &--left {
+      align-items: flex-end;
+      text-align: right;
+    }
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 2rem;
+
+    > img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+  
+}

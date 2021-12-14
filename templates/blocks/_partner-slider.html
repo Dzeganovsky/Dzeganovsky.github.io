@@ -1,0 +1,74 @@
+{% set clients = [{
+      name: "Имя партнера",
+      img: "10times"
+    },
+    {
+      name: "Имя партнера",
+      img: "allbiz"
+    },
+    {
+      name: "Имя партнера",
+      img: "B2BTradeShows"
+    },
+    {
+      name: "Имя партнера",
+      img: "Eventfull"
+    },
+    {
+      name: "Имя партнера",
+      img: "Expomap"
+    },
+    {
+      name: "Имя партнера",
+      img: "Exponet"
+    },
+    {
+      name: "Имя партнера",
+      img: "ExpoUA"
+    },
+    {
+      name: "Имя партнера",
+      img: "GZtradefair"
+    },
+    {
+      name: "Имя партнера",
+      img: "Promua"
+    },
+    {
+      name: "Имя партнера",
+      img: "sexpo"
+    },
+    {
+      name: "Имя партнера",
+      img: "tradeindia"
+    },
+    {
+      name: "Имя партнера",
+      img: "unknownchineese"
+    }
+] %}
+
+
+<section class="clients-slider">
+  {% set sectionHeader = {
+    title: clientSlider.title,
+    description:  clientSlider.description
+  } %}
+  {% include "./_section-header.html" %}
+
+  <div class="swiper" data-section="our-clients">
+    <div class="swiper-wrapper">
+      {% for item in clients %}
+        <div class="swiper-slide">
+          <figure class="clients-slider__item">
+            <picture class="clients-slider__image">
+              <source  type="image/webp" srcset="/dist/img/dummy/partners/{{item.img}}.webp, /dist/img/dummy/partners/{{item.img}}@2x.webp 2x"/>
+              <img srcset="/dist/img/dummy/partners/{{item.img}}.png, /dist/img/dummy/partners/{{item.img}}@2x.png 2x" src="/dist/img/dummy/partners/{{item.img}}.png" alt="{{item.name}}"/>
+            </picture>
+          </figure>
+        </div>
+      {% endfor %}
+    </div> 
+    <div class="swiper-pagination"></div>
+  </div>
+</section>

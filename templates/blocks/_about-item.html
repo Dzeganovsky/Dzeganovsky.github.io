@@ -1,0 +1,45 @@
+<div class="about-item">
+  <article class="about-item__section  about-item__section--left">
+    {% if aboutItem.left.image %}
+      <picture class="about-item__logo">
+        <source  type="image/webp" srcset="/dist/img/dummy/about/{{ aboutItem.left.image }}.webp, /dist/img/dummy/about/{{ aboutItem.left.image }}@2x.webp 2x"/>
+        <img srcset="/dist/img/dummy/about/{{ aboutItem.left.image }}.png, /dist/img/dummy/about/{{ aboutItem.left.image }}@2x.png 2x" src="/dist/img/dummy/about/{{ aboutItem.left.image }}.png" alt=""/>
+      </picture>
+    {% endif %}
+
+    {% if aboutItem.left.title %}
+      <h4 class="about-item__title">
+        {{ aboutItem.left.title | safe }}
+      </h4>
+    {% endif %}
+
+    {% if aboutItem.left.text %}
+      <p class="about-item__text">
+        {{ aboutItem.left.text | safe }}
+      </p>
+    {% endif %}
+  </article>
+  <div class="about-item__year">
+    {{ aboutItem.year }}
+  </div>
+  <article class="about-item__section">
+    {% if aboutItem.right.image %}
+      <picture class="about-item__logo">
+        <source  type="image/webp" srcset="/dist/img/dummy/about/{{ aboutItem.right.image }}.webp, /dist/img/dummy/about/{{ aboutItem.right.image }}@2x.webp 2x"/>
+        <img srcset="/dist/img/dummy/about/{{ aboutItem.right.image }}.png, /dist/img/dummy/about/{{ aboutItem.right.image }}@2x.png 2x" src="/dist/img/dummy/about/{{ aboutItem.right.image }}.png" alt=""/>
+      </picture>
+    {% endif %}
+
+    {% if aboutItem.right.title %}
+      <h4 class="about-item__title">
+        {{ aboutItem.right.title | safe }}
+      </h4>
+    {% endif %}
+    
+    {% if aboutItem.right.text %}
+      <p class="about-item__text">
+        {{ aboutItem.right.text | safe }}
+      </p>
+    {% endif %}
+  </article>
+</div>

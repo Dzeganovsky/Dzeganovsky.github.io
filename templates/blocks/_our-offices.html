@@ -1,0 +1,85 @@
+<section class="our-offices">
+  {% set sectionHeader = {
+    title: "Офисы",
+    description: "Наши офисы расположены во многих крупнейших странах мира:<br>Россия, Великобритания, Украина, Китай, Эстония."
+  } %}
+  {% include "./_section-header.html" %}
+
+  {% set offices = [
+    {
+      country: "Украина",
+      address: "
+        <p>Ул. Казимира Малевича, 86л, 2-й этаж.<br/>04070 Киев, Украина</p>
+        <p>Тел: +38 (044) 200-03-9</p>
+      ",
+      map: "office1"
+    },
+    {
+      country: "Великобритания",
+      address: "
+        <p>2nd Floor, 13 John Prince’s Street,<br/>London W1G 0JR, United Kingdom</p>
+        <p>Tel:  + 44 20 7043 5170</p>
+      ",
+      map: "office2"
+    },
+    {
+      country: "Китай - Шанхай",
+      address: "
+        <p>ExpoPromoter (Shanghai) Company Limited</p>
+        <p>607 Room, Build 1，№55, Aolie Road, Pilot Free Trade Zone, China (Shanghai)</p>
+        <p>Tel: +86 -21-80236007</p>
+      ",
+      map: "office3"
+    },
+    {
+      country: "Китай - Санья",
+      address: "
+        <p>ExpoPromoter (Sanya) Company Limited	Beneficary’s </p>
+        <p>High-tech Industrial Park, No. 212, Jiyang Avenue, Jiyang District, Sanya City</p>
+        <p>Tel: +86 021-80236045</p>
+      ",
+      map: "office4"
+    },
+    {
+      country: "Китай - Гонконг",
+      address: "
+        <p>ExpoPromoter (Hong Kong) Co. LTD</p>
+        <p>Room 1308, 13/F, Ceo Tower, 77 Wing Hong Street, Cheung Sha Wan, Kowloon, Hong Kong</p>
+        <p></p>
+      ",
+      map: "office5"
+    },
+    {
+      country: "Россия",
+      address: "
+        <p>ул. Летниковская, 10 стр. 1, 7 эт.<br/>115114, Москва, Россия</p>
+        <p>Тел: +7 (499) 340-29-67</p>
+      ",
+      map: "office6"
+    },
+    {
+      country: "Эстония",
+      address: "
+        <p>Event Digital Group OÜ</p>
+        <p>Harju maakond, Tallinn, Kesklinnalinnaosa, Ahtri tn 12, 10151</p>
+      ",
+      map: "office7"
+    }
+  ] %}
+  <div class="our-offices__list">
+    {% for item in offices %}
+      <article class="office-item">
+        <header class="office-item__name">
+          {{ item.country }}
+        </header>
+        <div class="office-item__address">
+          {{ item.address | safe }}
+        </div>
+        <picture class="office-item__map">
+          <source  type="image/webp" srcset="/dist/img/dummy/offices/{{ item.map }}.webp, /dist/img/dummy/offices/{{ item.map }}@2x.webp 2x"/>
+          <img srcset="/dist/img/dummy/offices/{{ item.map }}.png, /dist/img/dummy/offices/{{ item.map }}@2x.png 2x" src="/dist/img/dummy/offices/{{ item.map }}.png" alt="{{item.name}}"/>
+        </picture>
+      </article>
+    {% endfor %}
+  </div>
+</section>
