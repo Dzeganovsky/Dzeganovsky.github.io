@@ -48,4 +48,16 @@
       }
     }
   }
+
+  &__item--active &__link {
+    color: var(--mint-100);
+    cursor: default;
+
+    &:hover {
+      @media screen and (min-width: 1380px) {
+        background-color: transparent;
+        color: var(--mint-100);
+      }
+    }
+  }
 }
